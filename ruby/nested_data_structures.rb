@@ -58,3 +58,21 @@ premier_league = {
     ]
   }
 }
+
+# The following line of code will print the array players
+p premier_league[:manchester_united][:players]
+
+# The following line of code will print the number of FA Cups won by arsenal
+p premier_league[:arsenal][:trophies][:fa_cup]
+
+# The following line of code will print "James Milner"
+p premier_league[:liverpool][:players][0]
+
+# The following line of code will change the nickname "Man United" for manchester_united to "Red Devils" and print the result
+p premier_league[:manchester_united][:nickname] = "Red Devils"
+
+# The following line of code will reverse the order of the players for manchester_city and print the result
+p premier_league[:manchester_city][:players].reverse!
+
+# The following line prints the new data structure with changes made
+p premier_league
