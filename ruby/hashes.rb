@@ -58,6 +58,13 @@ if review == :none
 else
   p "What is the updated response for the question being changed?"
   new_input = gets.chomp
+  if user_input == "t" || user_input == "T"
+    user_input = true
+  elsif user_input == "f" || user_input == "F"
+    user_input = false
+  else
+    user_input = user_input.to_sym
+  end
 end
 
 update_information = {review => new_input}
