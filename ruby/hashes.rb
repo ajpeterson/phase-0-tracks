@@ -2,10 +2,10 @@
 #   -save value to key in hash
 # Repeat previous steps for clients age, nmuber of children, home square footage and decor theme
 # Print client information for review
-# Prompt designer to review and confirm correct or if needed make a change
+# Prompt designer to review and confirm if correct or if needed make a change
 # if changes are needed
 #   - allow designer to re-enter value for a specific question and print updated client information.
-#   - else end program
+#   - end program
 
 # Initialize hash
 client_information = {}
@@ -14,28 +14,28 @@ client_information = {}
 puts "What is the client's full name?"
 client_information[:name] = gets.chomp
 
-puts "What is your age?"
+puts "What is the client's age?"
 client_information[:age] = gets.chomp.to_i
 
-puts "How many children do you have?"
+puts "How many children does the client have?"
 client_information[:children] = gets.chomp.to_i
 
-puts "What is the square footage of your home?"
+puts "What is the square footage of the home?"
 client_information[:square_ft] = gets.chomp.to_i
 
-puts "Do you like modern decor?"
+puts "The client likes modern decor? (T/F)"
 modern = gets.chomp
 # Conditionals modern decor question
-if modern == "yes" || modern == "y" || modern == "Yes" || modern == "Y"
+if modern == "t" || modern == "T"
   client_information[:modern] = true
 else
   client_information[:modern] =  false
 end
 
-puts "Do you like rustic decor?"
+puts "The client likes rustic decor? (T/F)"
 rustic = gets.chomp
 # Conditionals rustic decor question
-if rustic == "yes" || rustic == "y" || rustic == "Yes" || rustic == "Y"
+if rustic == "t" || rustic == "T"
   client_information[:rustic] = true
 else
   client_information[:rustic] =  false
@@ -44,7 +44,7 @@ end
 puts "Please provide the name of a secondary contact."
 client_information[:second_contact] = gets.chomp
 
-puts "What is your secondary contacts phone number?"
+puts "What is the secondary contacts phone number?"
 client_information[:second_contact_phone] = gets.chomp
 
 # Prints hash to screen
@@ -55,4 +55,13 @@ puts "Please review the information any errors. If a correction is needed, pleas
 review = gets.chomp.to_sym
 if review == :none
   p "Thank you, this profile is complete."
+else
+  p "What is the updated response for the question being changed?"
+  new_input = gets.chomp
 end
+
+update_information = {review => new_input}
+p update_information
+
+client_information.merge!(update_information)
+p client_information
