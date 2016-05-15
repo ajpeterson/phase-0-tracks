@@ -6,13 +6,16 @@
 #   - Iterate through the array changing each consonant to the next consonant value in the alphabet
 #   - Join the converted letters back together to form a new spy_name
 
-full_name = "Andrew Peterson"
+#puts "What is your full name (First Last)?"
+full_name = "Andrew Peterson".split('')
+#full_name.class
 
 def cipher(create_spy)
-  create_spy.split(' ').reverse!
-  new_array = create_spy
-  new_array.chars.map!{|letter| letter.next}
+	create_spy.reverse!
+	create_spy.map! {|letter| letter.next}
+	spy_name = create_spy.join('')
+	p spy_name
 end
-
-spy_name = cipher(full_name)
-p spy_name
+cipher(full_name)
+#spy_name = cipher(full_name)
+#p spy_name
