@@ -1,10 +1,11 @@
-# Take in a full_name as an argument
-# Convert full_name into an array of two strings [first_name, last_name]
-#   - Reverse the order of the array so last_name is listed first and first_name second
-#   - Split the array in an array of individual characters
-#   - Iterate through the array of individual characters changing each vowel into the next vowel in from a, e, i, o, u
-#   - Iterate through the array changing each consonant to the next consonant value in the alphabet
-#   - Join the converted letters back together to form a new spy_name
+# Ask user for full name
+# Convert full_name into an array
+#   - iterate through array changing the letters to the next letter in the alphabet
+#   - join letters to create a string of the alias_listing
+#   - split the string into two seperate words (last name, first name)
+#   - print spy_name
+# Add each entry to a hash data structure
+# Print out user's name and alias_listing
 
 alias_listing = {}
 alias_complete = false
