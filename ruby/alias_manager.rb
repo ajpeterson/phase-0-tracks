@@ -5,3 +5,13 @@
 #   - Iterate through the array of individual characters changing each vowel into the next vowel in from a, e, i, o, u
 #   - Iterate through the array changing each consonant to the next consonant value in the alphabet
 #   - Join the converted letters back together to form a new spy_name
+
+full_name = "Andrew Peterson"
+
+def cipher(create_spy)
+  create_spy.split(' ').reverse!
+
+end
+
+spy_name = cipher(full_name)
+p spy_name
