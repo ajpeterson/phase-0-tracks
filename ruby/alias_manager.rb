@@ -10,7 +10,8 @@ full_name = "Andrew Peterson"
 
 def cipher(create_spy)
   create_spy.split(' ').reverse!
-
+  new_array = create_spy
+  new_array.chars.map!{|letter| letter.next}
 end
 
 spy_name = cipher(full_name)
