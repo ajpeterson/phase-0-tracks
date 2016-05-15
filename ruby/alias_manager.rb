@@ -9,11 +9,11 @@
 alias_complete = false
 until alias_complete
 
-	puts "Please provide your full name. Enter as many name as you like. When done please type 'quit'."
+	puts "Enter full name for alias. When done enter 'quit'."
 	full_name = gets.chomp.split('')
 
 	if full_name == "quit".split('')
-		p "Thank you for providing your aliases."
+		p "Your aliases are noted."
 		alias_complete = true
 	else
 		def cipher(create_alias)
