@@ -6,13 +6,16 @@
 #   - Iterate through the array changing each consonant to the next consonant value in the alphabet
 #   - Join the converted letters back together to form a new spy_name
 
+alias_listing = {}
 alias_complete = false
+
 until alias_complete
 
 	puts "Enter full name for alias. When done enter 'quit'."
-	full_name = gets.chomp.split('')
+	full_name = gets.chomp
+	name = full_name.split('')
 
-	if full_name == "quit".split('')
+	if full_name == "quit"
 		p "Your aliases are noted."
 		alias_complete = true
 	else
@@ -23,8 +26,13 @@ until alias_complete
 			alias_string.split(' ')
 		end
 
-		spy_name = cipher(full_name)
+		spy_name = cipher(name)
 		p spy_name
+		alias_listing.store(full_name, spy_name)
 	end
 
+end
+
+alias_listing.each do |full_name, spy_name|
+	puts "#{full_name} is also known as #{spy_name}."
 end
