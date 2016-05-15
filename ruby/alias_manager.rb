@@ -6,15 +6,25 @@
 #   - Iterate through the array changing each consonant to the next consonant value in the alphabet
 #   - Join the converted letters back together to form a new spy_name
 
-puts "Please provide your full name. Enter as many name as you like. When done please type 'quit'."
-full_name = gets.chomp.split('')
+alias_complete = false
+until alias_complete
 
-def cipher(create_spy)
-	create_spy.map! {|letter| letter.next}
-	new_string = create_spy.join('')
-	new_string[6] = ' '
-	new_string.split(' ')
+	puts "Please provide your full name. Enter as many name as you like. When done please type 'quit'."
+	full_name = gets.chomp.split('')
+
+	if full_name == "quit".split('')
+		p "Thank you for providing your aliases."
+		alias_complete = true
+	else
+		def cipher(create_alias)
+			create_alias.map! {|letter| letter.next}
+			alias_string = create_alias.join('')
+			alias_string['!'] = ' '
+			alias_string.split(' ')
+		end
+
+		spy_name = cipher(full_name)
+		p spy_name
+	end
+
 end
-
-spy_name = cipher(full_name)
-p spy_name
