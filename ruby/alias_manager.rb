@@ -26,14 +26,14 @@ until alias_complete
 			alias_string['!'] = ' '
 			alias_string.split(' ')
 		end
-
 		spy_name = cipher(name)
-		p spy_name
-		alias_listing.store(full_name, spy_name)
+		final_alias = spy_name.join(' ')
+		p final_alias
+		alias_listing.store(full_name, final_alias)
 	end
 
 end
 
-alias_listing.each do |full_name, spy_name|
-	puts "#{full_name} is also known as #{spy_name}."
+alias_listing.each do |full_name, final_alias|
+	puts "#{full_name} is also known as #{final_alias}."
 end
