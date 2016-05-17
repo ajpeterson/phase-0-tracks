@@ -1,3 +1,7 @@
+# 6.2 Peer Pairing - Instance Methods
+# Keith Pilson
+# Andrew Peterson
+
 class Puppy
 
   def fetch(toy)
