@@ -17,6 +17,10 @@ class Puppy
     puts age_int * 7
   end
 
+  def licks_face
+    puts "I liked your face!"
+  end
+
 end
 
 # DRIVER Code
@@ -39,3 +43,7 @@ Cinnamon.roll_over
 # Test of our .dog_years instance method
 puts "This is a test of our 'dog_years' instance method:"
 Cinnamon.dog_years(10)
+
+# Test of our .licks_face instance method
+puts "This is a test of our 'licks_face' instance method:"
+Cinnamon.licks_face
