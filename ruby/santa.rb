@@ -13,6 +13,16 @@ class Santa
   def eat_milk_and_cookies(cookie_type)
     puts "That was a good #{cookie_type} cookie!"
   end
+
+  # getter methods for attributes
+  def celebrate_birthday
+    @age + 1
+  end
+
+  def get_mad_at(reindeer_name)
+    @reindeer_ranking.delete(reindeer_name)
+    @reindeer_ranking << reindeer_name
+  end
 end
 
 
@@ -27,16 +37,12 @@ ethnicity_list = ["black", "Latino", "caucasion", "Asian", "Mystical Creature", 
 # An empty array to capture newly initialized Santas
 santas = []
 
-puts "Iterating through genders to create new instances of Santa."
-gender_list.length.times do |i|
-  puts "Creating new Santa with #{gender_list[i]} and #{ethnicity_list[i]}."
-  santas << Santa.new(gender_list[i], ethnicity_list[i])
-end
+santa = Santa.new("male", "caucasion")
+p santa.celebrate_birthday
+p santa.get_mad_at("Vixen")
 
-puts "Now we will test each new Santa instance to make sure he is eating milk and cookies."
-santas.each do |santa|
-  santa.eat_milk_and_cookies("chocolate chip")
-end
+
+
 
 =begin
 # We can test our initialize method like this.
