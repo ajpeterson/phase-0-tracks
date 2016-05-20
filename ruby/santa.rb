@@ -1,3 +1,16 @@
+=begin
+--------PSEUDOCODE FOR SANTA PROGRAM----------
+Take input from user on many Santas they would like to sumulate
+Loop through the total number provided
+  - Print out Santas randomly generated gender
+  - Print Santas randomly generated ethnicity
+  - Print Santas randomly generated age between 0 and 140
+  - Print Santas speak instance method response
+  - Print Santas eat_milk_and_cookies instance method response
+On loop end
+  - Puts you Santa simulation is complete.
+=end
+
 class Santa
 
   attr_reader :age, :ethnicity
@@ -15,7 +28,7 @@ class Santa
   end
 
   def eat_milk_and_cookies(cookie_type)
-    puts "That was a good #{cookie_type} cookie!"
+    puts "loves #{cookie_type}"
   end
 
   # methods for attributes
@@ -42,29 +55,10 @@ santas = []
 puts "How many Santas would like created for your simulation?"
 number_of_santas = gets.chomp.to_i
 
-index = 0
-while index <= number_of_santas
-	santa = Santa.new(gender_list, ethnicity_list)
-	age = rand(140)
-	celebrate_birthday = age
-	puts "Simulated Santa...#{gender_list.sample}, #{ethnicity_list.sample}."
-	puts "Santa is #{celebrate_birthday} years old."
-	index += 1
-end
-
-
-=begin
---------PSEUDOCODE FOR SANTA PROGRAM----------
-Take input from user on many Santas they would like to sumulate
-Loop through the total number provided
-  - Print out Santas randomly generated gender
-  - Print Santas randomly generated ethnicity
-  - Print Santas randomly generated age between 0 and 140
-  - Print Santas speak instance method response
-  - Print Santas eat_milk_and_cookies instance method response
-On loop end
-  - Puts you Santa simulation is complete.
-=end
+santa = Santa.new(gender_list, ethnicity_list)
+age = rand(140)
+celebrate_birthday = age
+number_of_santas.times { |count| puts "#{santa.speak} Santa \##{count + 1} is #{gender_list.sample}, #{ethnicity_list.sample} and #{celebrate_birthday} years old." }
 
 
 =begin
