@@ -14,7 +14,7 @@ class Santa
     puts "That was a good #{cookie_type} cookie!"
   end
 
-  # getter methods for attributes
+  # methods for attributes
   def celebrate_birthday
     @age + 1
   end
@@ -22,6 +22,20 @@ class Santa
   def get_mad_at(reindeer_name)
     @reindeer_ranking.delete(reindeer_name)
     @reindeer_ranking << reindeer_name
+  end
+
+  # getter methods
+  def gender
+    @gender
+  end
+
+  def ethnicity
+    @ethnicity
+  end
+
+  # setter method for gender
+  def gender=(new_gender)
+    @gender = new_gender
   end
 end
 
@@ -37,13 +51,6 @@ ethnicity_list = ["black", "Latino", "caucasion", "Asian", "Mystical Creature", 
 # An empty array to capture newly initialized Santas
 santas = []
 
-santa = Santa.new("male", "caucasion")
-p santa.celebrate_birthday
-p santa.get_mad_at("Vixen")
-
-
-
-
 =begin
 # We can test our initialize method like this.
 puts "This is a test of our 'initialize' instance method:"
@@ -57,3 +64,15 @@ saint_nick.speak
 puts "This is a test of our 'eat_milk_and_cookies' instance method:"
 saint_nick.eat_milk_and_cookies("chocolate chip")
 =end
+
+# Driver code to test attribute methods
+santa = Santa.new("male", "caucasion")
+p santa.celebrate_birthday
+p santa.get_mad_at("Vixen")
+
+# driver code to test getter methods
+puts "Santa is a #{santa.ethnicity} #{santa.gender}."
+
+# driver code to test gender setter method
+santa.gender = "female"
+puts "Santa's new gender is #{santa.gender}."
