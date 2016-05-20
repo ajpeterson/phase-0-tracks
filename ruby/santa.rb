@@ -30,19 +30,31 @@ class Santa
 
 end
 
-
-# DRIVER CODE
-
 # An array of our possible genders
-gender_list = ["female", "male", "transgender", "demigender", "bigender", "genderfluid", "hijira", "polygender", "x-gender", "N/A"]
+gender_list = ["female", "male", "transgender", "demigender", "bigender", "genderfluid", "hijira", "polygender", "x-gender", "gender neutral", "N/A"]
 
 # An array of our possible ethnicities
-ethnicity_list = ["black", "Latino", "caucasion", "Asian", "Mystical Creature", "Ancient God", "Middle Eastern", "Native American", "Nordic", "N/A"]
+ethnicity_list = ["black", "Latino", "caucasion", "Asian", "Mystical Creature", "Ancient God", "Middle Eastern", "Native American", "Nordic", "Canadian", "N/A"]
 
 # An empty array to capture newly initialized Santas
 santas = []
 
 =begin
+--------PSEUDOCODE FOR SANTA PROGRAM----------
+Take input from user on many Santas they would like to sumulate
+Loop through the total number provided
+  - Print out Santas randomly generated gender
+  - Print Santas randomly generated ethnicity
+  - Print Santas randomly generated age between 0 and 140
+  - Print Santas speak instance method response
+  - Print Santas eat_milk_and_cookies instance method response
+On loop end
+  - Puts you Santa simulation is complete.
+=end
+
+
+=begin
+-------# DRIVER CODE-------
 # We can test our initialize method like this.
 puts "This is a test of our 'initialize' instance method:"
 saint_nick = Santa.new("Female", "Asian")
@@ -54,7 +66,7 @@ saint_nick.speak
 # We can test our eat_milk_and_cookies method like this.
 puts "This is a test of our 'eat_milk_and_cookies' instance method:"
 saint_nick.eat_milk_and_cookies("chocolate chip")
-=end
+
 
 # Driver code to test attribute methods
 santa = Santa.new("male", "caucasion")
@@ -69,3 +81,4 @@ puts "Santa is #{santa.age} years old."
 # driver code to test gender setter method
 santa.gender= "female"
 puts "Santa's new gender is #{santa.gender}."
+=end
