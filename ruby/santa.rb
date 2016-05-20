@@ -25,10 +25,6 @@ class Santa
   end
 
   # getter methods
-  def gender
-    @gender
-  end
-
   def age
     @age
   end
@@ -38,8 +34,9 @@ class Santa
   end
 
   # setter method for gender
-  def gender=(new_gender)
+  def gender= (new_gender)
     @gender = new_gender
+    puts "Santa's new gender is #{@gender}."
   end
 end
 
@@ -75,9 +72,8 @@ p santa.celebrate_birthday
 p santa.get_mad_at("Vixen")
 
 # driver code to test getter methods
-puts "Santa is a #{santa.ethnicity} #{santa.gender}."
+puts "Santa is a #{santa.ethnicity}."
 puts "Santa is #{santa.age} years old."
 
 # driver code to test gender setter method
-santa.gender = "female"
-puts "Santa's new gender is #{santa.gender}."
+santa.gender= "female"
