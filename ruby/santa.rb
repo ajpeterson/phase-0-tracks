@@ -1,4 +1,8 @@
 class Santa
+
+  attr_reader :age, :ethnicity
+  attr_accessor :gender
+
   def initialize(gender, ethnicity)
     @gender = gender
     @ethnicity = ethnicity
@@ -24,20 +28,6 @@ class Santa
     @reindeer_ranking << reindeer_name
   end
 
-  # getter methods
-  def age
-    @age
-  end
-
-  def ethnicity
-    @ethnicity
-  end
-
-  # setter method for gender
-  def gender= (new_gender)
-    @gender = new_gender
-    puts "Santa's new gender is #{@gender}."
-  end
 end
 
 
@@ -68,12 +58,14 @@ saint_nick.eat_milk_and_cookies("chocolate chip")
 
 # Driver code to test attribute methods
 santa = Santa.new("male", "caucasion")
+p santa
 p santa.celebrate_birthday
 p santa.get_mad_at("Vixen")
 
 # driver code to test getter methods
-puts "Santa is a #{santa.ethnicity}."
+puts "Santa is a #{santa.ethnicity} #{santa.gender}."
 puts "Santa is #{santa.age} years old."
 
 # driver code to test gender setter method
 santa.gender= "female"
+puts "Santa's new gender is #{santa.gender}."
