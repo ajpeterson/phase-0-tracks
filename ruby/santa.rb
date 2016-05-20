@@ -29,6 +29,10 @@ class Santa
     @gender
   end
 
+  def age
+    @age
+  end
+
   def ethnicity
     @ethnicity
   end
@@ -72,6 +76,7 @@ p santa.get_mad_at("Vixen")
 
 # driver code to test getter methods
 puts "Santa is a #{santa.ethnicity} #{santa.gender}."
+puts "Santa is #{santa.age} years old."
 
 # driver code to test gender setter method
 santa.gender = "female"
