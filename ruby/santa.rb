@@ -39,6 +39,20 @@ ethnicity_list = ["black", "Latino", "caucasion", "Asian", "Mystical Creature", 
 # An empty array to capture newly initialized Santas
 santas = []
 
+puts "How many Santas would like created for your simulation?"
+number_of_santas = gets.chomp.to_i
+
+index = 0
+while index <= number_of_santas
+	santa = Santa.new(gender_list, ethnicity_list)
+	age = rand(140)
+	celebrate_birthday = age
+	puts "Simulated Santa...#{gender_list.sample}, #{ethnicity_list.sample}."
+	puts "Santa is #{celebrate_birthday} years old."
+	index += 1
+end
+
+
 =begin
 --------PSEUDOCODE FOR SANTA PROGRAM----------
 Take input from user on many Santas they would like to sumulate
@@ -66,6 +80,13 @@ saint_nick.speak
 # We can test our eat_milk_and_cookies method like this.
 puts "This is a test of our 'eat_milk_and_cookies' instance method:"
 saint_nick.eat_milk_and_cookies("chocolate chip")
+
+# iterate through gender_list to create new instances of Santa with gender and ethnicity
+puts "Iterating through genders to create new instances of Santa."
+gender_list.length.times do |i|
+  puts "Creating new Santa with #{gender_list[i]} and #{ethnicity_list[i]}."
+  santas << Santa.new(gender_list[i], ethnicity_list[i])
+end
 
 
 # Driver code to test attribute methods
