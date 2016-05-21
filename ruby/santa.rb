@@ -56,19 +56,8 @@ puts "How many Santas would like created for your simulation?"
 number_of_santas = gets.chomp.to_i
 
 santa = Santa.new(gender_list, ethnicity_list)
-age = rand(140)
-celebrate_birthday = age
-number_of_santas.times { |count| puts "#{santa.speak} Santa \##{count + 1} is #{gender_list.sample}, #{ethnicity_list.sample} and #{celebrate_birthday} years old." }
 
-
-index = 0
-while index <= number_of_santas
-	santa = Santa.new(gender_list, ethnicity_list)
-	age = rand(140)
-	celebrate_birthday = age
-	puts "#{santa.speak} This is Santa...I am #{gender_list.sample}, #{ethnicity_list.sample} and #{celebrate_birthday} years old."
-	index += 1
-end
+number_of_santas.times { |count| puts "#{santa.speak} Santa \##{count + 1} is #{gender_list.sample}, #{ethnicity_list.sample} and #{age = rand(140)} years old." }
 
 =begin
 -------# DRIVER CODE-------
