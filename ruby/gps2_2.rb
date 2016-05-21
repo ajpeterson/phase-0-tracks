@@ -45,20 +45,20 @@ def create_list(items)
 
 end
 
-def add_item(item, hash)
+def add_item(item, quantity, hash)
 
-	hash.store(item.to_sym, 1)
+	hash.store(item.to_sym, quantity)
 
 end
 
 def remove_item(item, hash)
 
-	hash.delete(item)
+	hash.delete(item.to_sym)
 end
 
 def update_quantity(item, quantity, hash)
 
-	hash[item] = quantity
+	hash[item.to_sym] = quantity
 end
 
 def print_list(hash)
@@ -68,9 +68,22 @@ def print_list(hash)
  	end
 end
 
+# Driver Code for initial testing
 
+=begin
 list = create_list("coffee sugar cream")
 add_item("non-dairy creamer", list)
 remove_item(:cream, list)
 update_quantity(:sugar, 10, list)
+print_list(list)
+=end
+
+# DRIVER CODE for testing Release 3
+list = create_list("coffee sugar milk eggs")
+add_item("lemonade", 2, list)
+add_item("tomatoes", 3, list)
+add_item("onions", 1, list)
+add_item("ice cream", 4, list)
+remove_item("lemonade", list)
+update_quantity("ice cream", 1, list)
 print_list(list)
