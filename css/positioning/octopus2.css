@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  position: relative;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+#octopus {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 200px;
+  margin: auto;
+}
+
+#hat {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 125px;
+
+}
+
+#glasses {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 300px;
+}

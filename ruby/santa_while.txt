@@ -1,0 +1,8 @@
+index = 0
+while index <= number_of_santas
+	santa = Santa.new(gender_list, ethnicity_list)
+	age = rand(140)
+	celebrate_birthday = age
+	puts "#{santa.speak} This is Santa...I am #{gender_list.sample}, #{ethnicity_list.sample} and #{celebrate_birthday} years old."
+	index += 1
+end
