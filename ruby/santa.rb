@@ -61,6 +61,15 @@ celebrate_birthday = age
 number_of_santas.times { |count| puts "#{santa.speak} Santa \##{count + 1} is #{gender_list.sample}, #{ethnicity_list.sample} and #{celebrate_birthday} years old." }
 
 
+index = 0
+while index <= number_of_santas
+	santa = Santa.new(gender_list, ethnicity_list)
+	age = rand(140)
+	celebrate_birthday = age
+	puts "#{santa.speak} This is Santa...I am #{gender_list.sample}, #{ethnicity_list.sample} and #{celebrate_birthday} years old."
+	index += 1
+end
+
 =begin
 -------# DRIVER CODE-------
 # We can test our initialize method like this.
