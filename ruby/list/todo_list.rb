@@ -1,3 +1,7 @@
+# 6.6 Peer Pairing
+# Andrew Peterson
+# Edward Kim
+
 class TodoList
   def initialize(list)
     @list = ["do the dishes", "mow the lawn"]
