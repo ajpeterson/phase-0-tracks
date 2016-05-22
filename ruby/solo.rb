@@ -20,6 +20,9 @@ Fouls committed
 
 class SoccerPlayer
 
+  attr_reader :years_with_team, :age
+  attr_accessor :games_played, :position
+
   def initialize(years_with_team, age)
     @years_with_team = years_with_team
     @age = age
@@ -27,6 +30,21 @@ class SoccerPlayer
     @position = ["forward", "winger", "midfield", "fullback", "center back", "goalie"]
   end
 
+  def goals_scored(goals)
+    puts "Season goal count = #{goals}"
+  end
+
+  def foul_committed
+    puts "*CRUNCH* That was a poor tackle!"
+  end
+
+  def games_played(appearances)
+    puts "Number of appearances this season = #{appearances}"
+  end
+
+  def position_played
+    @position.sample
+  end
 end
 
 # DRIVER CODE for Testing
