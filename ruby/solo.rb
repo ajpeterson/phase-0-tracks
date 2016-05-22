@@ -23,7 +23,7 @@ class SoccerPlayer
   attr_reader :years_with_team, :age
   attr_accessor :games_played, :position
 
-  def initialize(years_with_team, age)
+  def initialize(age, years_with_team)
     @years_with_team = years_with_team
     @age = age
     @games_played = 0
@@ -57,8 +57,11 @@ until player_creation_complete
   puts "How old is the player?"
   age = gets.chomp.to_i
 
-  puts "How long have they been on the team?"
+  puts "How many years have they been on the team?"
   years_with_team = gets.chomp.to_i
+
+  player = SoccerPlayer.new(age, years_with_team)
+  player_list.push(player)
 
   puts "Would you like to add another player?"
   user_response = gets.chomp
@@ -66,15 +69,12 @@ until player_creation_complete
   if user_response == "no"
     puts "Your team has been created:"
     player_creation_complete = true
-  else
-    player = SoccerPlayer.new(age, years_with_team)
-    player_list.push
   end
 
 end
 
-player_list.each do
-  puts "Soccer player: #{age} years old, #{years_with_team} year(s) on team, plays #{player.position_played}."
+player_list.each_with_index do |player, index|
+  puts "Soccer player \##{index + 1}: #{player.age} years old, #{player.years_with_team} year(s) on team, plays #{player.position_played}."
 end
 
 =begin
