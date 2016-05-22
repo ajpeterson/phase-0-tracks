@@ -51,3 +51,15 @@ end
 
 puts "This is a test of our 'initialize' instance method:"
 p player = SoccerPlayer.new(5, 28)
+
+puts "This is a test of our 'goals_scored' instance method:"
+player.goals_scored(18)
+
+puts "This is a test of our 'foul_committed' instance method:"
+player.foul_committed
+
+puts "This is a test of our 'games_played' instance method:"
+player.games_played(33)
+
+puts "This is a test of our 'position_played' instance method:"
+p player.position_played
