@@ -31,7 +31,7 @@ class SoccerPlayer
   end
 
   def goals_scored(goals)
-    puts "Season goal count = #{goals}"
+    puts "Goals scored = #{goals}"
   end
 
   def foul_committed
@@ -47,8 +47,38 @@ class SoccerPlayer
   end
 end
 
-# DRIVER CODE for Testing
+player_list = []
+player_creation_complete = false
 
+puts "Lets create a team of soccer players."
+
+until player_creation_complete
+
+  puts "How old is the player?"
+  age = gets.chomp.to_i
+
+  puts "How long have they been on the team?"
+  years_with_team = gets.chomp.to_i
+
+  puts "Would you like to add another player?"
+  user_response = gets.chomp
+
+  if user_response == "no"
+    puts "Your team has been created:"
+    player_creation_complete = true
+  else
+    player = SoccerPlayer.new(age, years_with_team)
+    player_list.push
+  end
+
+end
+
+player_list.each do
+  puts "Soccer player: #{age} years old, #{years_with_team} year(s) on team, plays #{player.position_played}."
+end
+
+=begin
+# DRIVER CODE for Testing
 puts "This is a test of our 'initialize' instance method:"
 p player = SoccerPlayer.new(5, 28)
 
@@ -63,3 +93,4 @@ player.games_played(33)
 
 puts "This is a test of our 'position_played' instance method:"
 p player.position_played
+=end
