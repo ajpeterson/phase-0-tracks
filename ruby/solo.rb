@@ -62,11 +62,19 @@ until player_creation_complete
 
   puts "Would you like to add another player?"
   user_response = gets.chomp
-  
+
   if user_response == "no"
-    p "Your team has been created:"
+    puts "Your team has been created:"
     player_creation_complete = true
+  else
+    player = SoccerPlayer.new(age, years_with_team)
+    player_list.push
   end
+
+end
+
+player_list.each do
+  puts "Soccer player: #{age} years old, #{years_with_team} year(s) on team, plays #{player.position_played}."
 end
 
 =begin
