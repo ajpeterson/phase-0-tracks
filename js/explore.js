@@ -5,11 +5,10 @@
 //    -use a loop to iterate over the string backwards
 //    -print the value to the console
 
-function reverse(str) {
-  var phrase = str;
-
-  for (var i = str.length; i >= 0; i--)   {
-    console.log(str[i]);
+function reverse(phrase) {
+  console.log(phrase);
+  for (var i = phrase.length - 1; i >= 0; i--)   {
+    console.log(phrase[i]);
   }
 }
 
@@ -17,4 +16,5 @@ function reverse(str) {
 // reverse("hello");
 
 //DRIVER CODE to reverse a string of my choosing
-reverse("Coding is Awesome!");
+var revStr = reverse("Coding is Awesome!");
+console.log(revStr);
