@@ -12,15 +12,27 @@
 //    -log the result to the console
 
 function reverse(phrase) {
+  /* Print phrase to console to ensure argument was received without error */
   console.log(phrase);
+  /* Loop through phrase using its length to establish parameters of loop*/
   for (var i = phrase.length - 1; i >= 0; i--)   {
-    console.log(phrase[i]);
+    var revChar = (phrase[i]);
+    /* Print to console to ensure result of loop is stored in variable */
+  rconsole.log(revChar);
+
   }
+
+
+  //for (var i = 1; i <= revChar.length; i++)   {
+  //  var singleStr = (revChar[i]).concat;
+  //}
+
+  //console.log(singleStr);
 }
 
 // DRIVER CODE to test functionality (Q3)
 // reverse("hello");
 
 //DRIVER CODE to reverse a string of my choosing
-var revStr = reverse("Coding is Awesome!");
-console.log(revStr);
+reverse("Coding is Awesome!");
+//sconsole.log(revStr);
