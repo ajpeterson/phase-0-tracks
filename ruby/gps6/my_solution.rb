@@ -1,7 +1,14 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge [by myself, with: Ellie Reid].
+# We spent 90 minutes on this challenge.
+# I spent an additional
+
+=begin
+==============REFLECTION==============
+1. The first hash syntax uses a string as the key and hash rocket (=>) to denote the value. The second syntax (the hash within the hash) uses symbols as the keys and therefore no hash rocket.
+
+=end
 
 # EXPLANATION OF require_relative
 # Require relative includes the data from a separate file in the same directory. It uses the directory the program resides in. Require uses the 'current directory' the program is being run from.
