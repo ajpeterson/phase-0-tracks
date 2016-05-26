@@ -24,7 +24,7 @@ console.log(horses);
 
 
 // Release 2
-function Cars(transmission,year,model) {
+function Cars(transmission, year, model) {
   console.log("A NEW CAR...", this);
 
   this.transmission = transmission;
