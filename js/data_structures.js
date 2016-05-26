@@ -14,7 +14,7 @@ for (var i=0; i<horseName.length; i++){
 	horses[horseName[i]] = horseColor[i]
 }
 
-// Driver Code
+// DRIVER CODE
 // Test to ensure a name and a color were added to their respective arrays
 console.log(horseName);
 console.log(horseColor);
@@ -23,25 +23,33 @@ console.log(horseColor);
 console.log(horses);
 
 
+// Release 2
+function Cars(transmission,year,model) {
+  console.log("A NEW CAR...", this);
 
-function Cars(transmission,year,model){
+  this.transmission = transmission;
+  this.year = year;
+  this.model = model;
 
-console.log("Creating a new car for you!")
-this.transmission=transmission;
-this.year=year;
-this.model=model;
+  this.startcar = function() {
+  	console.log("Starting your "+ " " + transmission + " " + year + " " + model);
+  }
 
-this.startcar=function(){
-	console.log("starting your"+transmission+year+model)}
-console.log("car complete!" )
+  console.log("CAR CREATION COMPLETE!");
 }
 
-var honda=new Cars("automatic",2013,"Civic");
+// DRIVER CODE: This will create three cars
+console.log("A new car is being created...");
+var honda = new Cars("automatic", 2013, "Civic");
 console.log(honda);
 honda.startcar();
+
+console.log("A new car is being created...");
 var ford = new Cars("manual", 1990, "Mustang");
 console.log(ford);
 ford.startcar();
-var toyota = new Cars("automatic ", 1998, " Corolla");
+
+console.log("A new car is being created...");
+var toyota = new Cars("automatic", 1998, "Corolla");
 console.log(toyota);
 toyota.startcar();
