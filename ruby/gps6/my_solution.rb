@@ -2,13 +2,7 @@
 
 # I worked on this challenge [by myself, with: Ellie Reid].
 # We spent 90 minutes on this challenge.
-# I spent an additional
-
-=begin
-==============REFLECTION==============
-1. The first hash syntax uses a string as the key and hash rocket (=>) to denote the value. The second syntax (the hash within the hash) uses symbols as the keys and therefore no hash rocket.
-
-=end
+# I spent an additional 30 minutes finishing up on my own.
 
 # EXPLANATION OF require_relative
 # Require relative includes the data from a separate file in the same directory. It uses the directory the program resides in. Require uses the 'current directory' the program is being run from.
@@ -83,7 +77,7 @@ end
 
 
 
-
+=begin
 #=======================================================================
 
 # DRIVER CODE
@@ -104,4 +98,16 @@ alaska.virus_effects
 
 
 #=======================================================================
+
 # Reflection Section
+1. The first hash syntax uses a string as the key and hash rocket (=>) to denote the value. The second syntax (the hash within the hash) uses symbols as the keys and therefore no hash rocket.
+
+2. Require relative includes the data from a separate file in the same directory. It uses the directory the program resides in. Require uses the 'current directory' the program is being run from.
+
+3. You can iterate through a hash using block code with .each. You could also use a while loop and the length of the hash to help set parametersfor the loop.
+
+4. What sttod out about the variables was that they were redundant, but also they were instance variables so they did not need to be passed into any methods, they could just be used.
+
+5. While it is still not completely solid, working through iteration over a hash with block code again was helpful.
+
+=end
