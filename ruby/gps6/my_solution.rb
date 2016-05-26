@@ -4,7 +4,7 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
+# Require relative includes the data from a separate file in the same directory. It uses the directory the program resides in. Require uses the 'current directory' the program is being run from.
 #
 require_relative 'state_data'
 
