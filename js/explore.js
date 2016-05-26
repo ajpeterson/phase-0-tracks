@@ -13,14 +13,13 @@
 
 function reverse(phrase) {
   /* Print phrase to console to ensure argument was received without error */
-  //console.log(phrase);
+  console.log(phrase);
 
   /* Loop through phrase using its length to establish parameters of loop*/
   for (var i = phrase.length - 1; i >= 0; i--)   {
     var revChar = (phrase[i]);
-    /* Print to console to ensure result of loop is stored in variable */
-  //console.log(revChar);
   }
+  console.log(revChar);
 
 }
 

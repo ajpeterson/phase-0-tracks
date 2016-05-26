@@ -7,6 +7,13 @@
 # Add each entry to a hash data structure
 # Print out user's name and alias_listing
 
+def cipher(create_alias)
+	create_alias.map! {|letter| letter.next}
+	alias_string = create_alias.join('')
+	alias_string['!'] = ' '
+	alias_string.split(' ')
+end
+
 alias_listing = {}
 alias_complete = false
 
@@ -17,18 +24,11 @@ until alias_complete
 	name = full_name.split('')
 
 	if full_name == "quit"
-		p "Your aliases are noted."
+		puts "Your aliases are noted."
 		alias_complete = true
 	else
-		def cipher(create_alias)
-			create_alias.map! {|letter| letter.next}
-			alias_string = create_alias.join('')
-			alias_string['!'] = ' '
-			alias_string.split(' ')
-		end
 		spy_name = cipher(name)
 		final_alias = spy_name.join(' ')
-		p final_alias
 		alias_listing.store(full_name, final_alias)
 	end
 

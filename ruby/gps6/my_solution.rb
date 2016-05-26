@@ -1,29 +1,39 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge [by myself, with: Ellie Reid].
+# We spent 90 minutes on this challenge.
+# I spent an additional
+
+=begin
+==============REFLECTION==============
+1. The first hash syntax uses a string as the key and hash rocket (=>) to denote the value. The second syntax (the hash within the hash) uses symbols as the keys and therefore no hash rocket.
+
+=end
 
 # EXPLANATION OF require_relative
-#
+# Require relative includes the data from a separate file in the same directory. It uses the directory the program resides in. Require uses the 'current directory' the program is being run from.
 #
 require_relative 'state_data'
 
 class VirusPredictor
 
+  # Intialize instance variables
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
+   # Calls methods and uses neccessary instance variables as parameters.
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths
+    speed_of_spread
   end
 
   private
 
-  def predicted_deaths(population_density, population, state)
+  # Uses if else conditional logic to determine deaths using instance variables as parameters. Then prints a statement listing the detahs for a particular state.
+  def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
@@ -41,7 +51,8 @@ class VirusPredictor
 
   end
 
-  def speed_of_spread(population_density, state) #in months
+  # Uses if else conditional logic to determine rate of spread using population_densityand state instance variables as parameters, with a default of 0.0. Prints a statement that gets added to the statement from predicted_deaths.
+  def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
@@ -63,6 +74,15 @@ class VirusPredictor
   end
 
 end
+
+STATE_DATA.each do |state_name, demographics|
+  state = VirusPredictor.new(state_name, demographics[:population_density], demographics[:population])
+  state.virus_effects
+end
+
+
+
+
 
 #=======================================================================
 
