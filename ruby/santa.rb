@@ -78,7 +78,7 @@ puts "Iterating through genders to create new instances of Santa."
 gender_list.length.times do |i|
   puts "Creating new Santa with #{gender_list[i]} and #{ethnicity_list[i]}."
   santas << Santa.new(gender_list[i], ethnicity_list[i])
-end
+=end
 
 
 # Driver code to test attribute methods
@@ -94,4 +94,3 @@ puts "Santa is #{santa.age} years old."
 # driver code to test gender setter method
 santa.gender= "female"
 puts "Santa's new gender is #{santa.gender}."
-=end
