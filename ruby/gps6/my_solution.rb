@@ -2,7 +2,7 @@
 
 # I worked on this challenge [by myself, with: Ellie Reid].
 # We spent 90 minutes on this challenge.
-# I spent an additional
+# I spent an additional 30 minutes finishing up on my own.
 
 # EXPLANATION OF require_relative
 # Require relative includes the data from a separate file in the same directory. It uses the directory the program resides in. Require uses the 'current directory' the program is being run from.
