@@ -68,6 +68,15 @@ class VirusPredictor
 
 end
 
+STATE_DATA.each do |state_name, demographics|
+  state = VirusPredictor.new(state_name, demographics[:population_density], demographics[:population])
+  state.virus_effects
+end
+
+
+
+
+
 #=======================================================================
 
 # DRIVER CODE
