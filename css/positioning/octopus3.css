@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  position: relative;
+  max-width: 80%
+  margin: 0 auto;
+}
+
+#octo img {
+  position:fixed;
+  display: block;
+  left: 0;
+  right: 0;
+  top: 200px;
+  margin: auto;
+}
+
+#hat img {
+  position: absolute;
+  display: block;
+  left: 0;
+  right: 0;
+  top: 125px;
+  margin: auto;
+}
+
+#glasses img {
+  position: relative;
+  display: block;
+  top: 300px;
+  margin: auto;
+}
