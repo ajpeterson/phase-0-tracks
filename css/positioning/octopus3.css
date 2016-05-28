@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  position: relative;
+  max-width: 80%
+  margin: 0 auto;
+  background-color: blue;
+}
+
+img {
+  position:fixed;
+  margins: 50px, auto;
+}
