@@ -7,10 +7,29 @@ body {
   position: relative;
   max-width: 80%
   margin: 0 auto;
-  background-color: blue;
 }
 
-img {
+#octo img {
   position:fixed;
-  margins: 50px, auto;
+  display: block;
+  left: 0;
+  right: 0;
+  top: 200px;
+  margin: auto;
+}
+
+#hat img {
+  position: absolute;
+  display: block;
+  left: 0;
+  right: 0;
+  top: 125px;
+  margin: auto;
+}
+
+#glasses img {
+  position: relative;
+  display: block;
+  top: 300px;
+  margin: auto;
 }
