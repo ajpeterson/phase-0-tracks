@@ -82,7 +82,7 @@ add_item("lemonade", 2, list)
 add_item("tomatoes", 3, list)
 add_item("onions", 1, list)
 add_item("ice cream", 4, list)
-
+p list
 # Test code to remove item from list
 remove_item("lemonade", list)
 
