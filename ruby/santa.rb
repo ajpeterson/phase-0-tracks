@@ -17,6 +17,7 @@ class Santa
   attr_accessor :gender
 
   def initialize(gender, ethnicity)
+    p "initializing Santa instance..."
     @gender = gender
     @ethnicity = ethnicity
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
@@ -28,7 +29,7 @@ class Santa
   end
 
   def eat_milk_and_cookies(cookie_type)
-    puts "loves #{cookie_type}"
+    puts "That was a good #{cookie_type}"
   end
 
   # methods for attributes
