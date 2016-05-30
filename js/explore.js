@@ -19,15 +19,14 @@ function reverse(phrase) {
   for (var i = phrase.length - 1; i >= 0; i--)   {
     revChar = revChar + (phrase[i]);
   }
-	console.log(revChar);
-
+	return revChar;
 }
 
 // DRIVER CODE to test functionality (Q3)
 // reverse("hello");
 
-//DRIVER CODE to reverse a string of my choosing
-reverse("Coding is Awesome!");
+// DRIVER CODE to reverse a string of my choosing
+// reverse("Coding is Awesome!");
 
 var finalStr = reverse("Coding is Awesome!");
 
