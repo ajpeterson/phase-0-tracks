@@ -33,13 +33,23 @@ function longestPhrase(array) {
 
 // Release 1 function
 function sameValue(obj1, obj2) {
-  console.log(obj1);
-  console.log(obj2);
+  if(obj1.breed === obj2.breed) {
+   return true;
+ }
+ else if(obj1.age === obj2.age) {
+   return true;
+ }
+ else if(obj1.name === obj2.name) {
+   return true;
+ }
+ else {
+   return false;
+ }
 }
 
 dog = {breed: "Saint Bernard", age: 10, name: "Cinnamon"};
 doggie = {breed: "Saint Bernard", age: 8, name: "Rooney"};
-sameValue(dog, doggie);
+console.log(sameValue(dog, doggie));
 
 /* DRIVER CODE to test Release 0
 newArray = ["long phrase", "longest phrase", "longer phrase"];
