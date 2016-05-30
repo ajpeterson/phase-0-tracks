@@ -13,11 +13,11 @@
 
 function reverse(phrase) {
   /* Print phrase to console to ensure argument was received without error */
-  console.log(phrase);
-
+  //console.log(phrase);
+  var revChar = phrase;
   /* Loop through phrase using its length to establish parameters of loop*/
   for (var i = phrase.length - 1; i >= 0; i--)   {
-    var revChar = revChar + (phrase[i]);
+    revChar = revChar + (phrase[i]);
   }
 	console.log(revChar);
 }
@@ -26,7 +26,7 @@ function reverse(phrase) {
 // reverse("hello");
 
 //DRIVER CODE to reverse a string of my choosing
-reverse("Coding is Awesome!");
+//reverse("Coding is Awesome!");
 
 var finalStr = reverse("Coding is Awesome!");
 
