@@ -47,9 +47,6 @@ function sameValue(obj1, obj2) {
  }
 }
 
-dog = {breed: "Saint Bernard", age: 10, name: "Cinnamon"};
-doggie = {breed: "Saint Bernard", age: 8, name: "Rooney"};
-console.log(sameValue(dog, doggie));
 
 /* DRIVER CODE to test Release 0
 newArray = ["long phrase", "longest phrase", "longer phrase"];
@@ -61,3 +58,8 @@ longestPhrase(nameArray);
 cityArray = ["Seattle", "Chicago", "Paris", "Rome", "London"]
 longestPhrase(cityArray);
 */
+
+// DRIVER CODE to test Release 1
+dog = {breed: "Saint Bernard", age: 10, name: "Cinnamon"};
+doggie = {breed: "Saint Bernard", age: 8, name: "Rooney"};
+console.log(sameValue(dog, doggie));
