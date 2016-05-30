@@ -12,9 +12,9 @@
 //    -log the result to the console
 
 function reverse(phrase) {
-  /* Print phrase to console to ensure argument was received without error */
-  // console.log(phrase);
-  var revChar = phrase;
+  // Set empty variable for reverse string
+  var revChar = "";
+
   /* Loop through phrase using its length to establish parameters of loop*/
   for (var i = phrase.length - 1; i >= 0; i--)   {
     revChar = revChar + (phrase[i]);
