@@ -10,11 +10,18 @@ RELEASE 0 Pseudocode
 
 function longestPhrase(array) {
   //console.log(array);
-  for (var i = 0; i <= array.length - 1; i++)  {
-  	console.log(array[i].length);
+  var longestLength = 0;
+  var longestString = "";
 
+  for (var i = 0; i <= array.length - 1; i++)  {
+    if (array[i].length > longestLength) {
+      longestLength = array[i].length;
+      longestString = array[i];
+    }
   }
+  console.log(longestString);
 }
 
+/* DRIVER CODE to test Release 0 */
 newArray = ["long phrase", "longest phrase", "longer phrase"];
 longestPhrase(newArray);
