@@ -8,6 +8,7 @@ RELEASE 0 Pseudocode
  - Print the longest string to the console
 */
 
+// Release 0 function
 function longestPhrase(array) {
   //console.log(array);
   var longestLength = 0;
@@ -25,3 +26,9 @@ function longestPhrase(array) {
 /* DRIVER CODE to test Release 0 */
 newArray = ["long phrase", "longest phrase", "longer phrase"];
 longestPhrase(newArray);
+
+nameArray = ["Nora", "Greta", "Andrew", "Cinnamon"];
+longestPhrase(nameArray);
+
+cityArray = ["Seattle", "Chicago", "Paris", "Rome", "London"]
+longestPhrase(cityArray);
