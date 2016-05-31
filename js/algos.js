@@ -93,7 +93,13 @@ longestPhrase(cityArray);
 
 
 // DRIVER CODE to test Release 1
-dog = {breed: "Saint Bernard", age: 10, name: "Cinnamon"};
+------Will return false since no key value pair matches------
+dog = {breed: "Labrador", age: 10, name: "Cinnamon"};
+doggie = {breed: "Saint Bernard", age: 8, name: "Rooney"};
+console.log(sameValue(dog, doggie));
+
+------Will return true since the age key has the same value------
+dog = {breed: "Labrador", age: 8, name: "Cinnamon"};
 doggie = {breed: "Saint Bernard", age: 8, name: "Rooney"};
 console.log(sameValue(dog, doggie));
 */
