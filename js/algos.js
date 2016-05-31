@@ -71,7 +71,7 @@ function randomString(int) {
 	var stringArray = [];
 
   for (var i = 1; i < int + 1; i++ ) {
-  	newString = alpha.random;
+  	newString = newString = alpha.charAt(Math.floor(Math.random() * alpha.length));
   	stringArray.push(newString);
   }
 	console.log(stringArray);
