@@ -9,11 +9,28 @@ RELEASE 0 Pseudocode
 
 RELEASE 1 Pseudocode
 - Define a function that will take two objects as parameters
-- Use a for in loop to iterate through each object for its key value pairs
- - set variables for each key value pairs
- - compare values of each object for each key
- - if a key value pair is the same in each object return true
- - else return false
+- Iterate through each object
+  - create an array of the object keys for each object
+    - define a function that will take the two key arrays as arguments
+      - use a loop to compare the keys
+        - use if else if conditional statements to see if the keys match
+  - create an array of the object values for each object
+    - define a function that will take the two value arrays as arguments
+     - use a loop to compare the values
+     - use if else if conditional statements to see if the values match
+- use if else if statements to see if keys function is true
+- use if else if statements to see if values function is true
+  - if both are true return true
+  - else return false
+
+ RELEASE 2 Pseudocode
+ - Define a function that will take an integer for an argument
+ - Initialize an empty array
+ - Set a variable of the alphabet
+ - Use a loop to iterate through the alphabet the number of times of the integer
+  - each time trhough generate a string of random characters
+  - push strings into the empty array
+- Return the array
 */
 
 // Release 0 function
@@ -47,6 +64,22 @@ function sameValue(obj1, obj2) {
  }
 }
 
+// Release 2 function
+function randomString(int) {
+	var alpha = "abcdefghijklmnopqrstuvwxyz";
+	var newString = "";
+	var stringArray = [];
+
+  for (var i = 1; i < int + 1; i++ ) {
+  	newString = alpha.random;
+  	stringArray.push(newString);
+  }
+	console.log(stringArray);
+}
+
+randomString(3);
+
+
 
 /* DRIVER CODE to test Release 0
 newArray = ["long phrase", "longest phrase", "longer phrase"];
@@ -57,9 +90,10 @@ longestPhrase(nameArray);
 
 cityArray = ["Seattle", "Chicago", "Paris", "Rome", "London"]
 longestPhrase(cityArray);
-*/
+
 
 // DRIVER CODE to test Release 1
 dog = {breed: "Saint Bernard", age: 10, name: "Cinnamon"};
 doggie = {breed: "Saint Bernard", age: 8, name: "Rooney"};
 console.log(sameValue(dog, doggie));
+*/
