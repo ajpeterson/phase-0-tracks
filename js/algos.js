@@ -102,7 +102,7 @@ console.log(sameValue(dog, doggie));
 */
 
 //DRIVER Code to test Release 2
-for (var n = 1; n < 10; n++) {
+for (var n = 1; n <= 10; n++) {
 	var stringArray = randomString(5);
 	console.log(stringArray);
 	longestPhrase(stringArray);
