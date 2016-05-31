@@ -38,8 +38,9 @@ function longestPhrase(array) {
   //console.log(array);
   var longestLength = 0;
   var longestString = "";
+  var length = array.length - 1;
 
-  for (var i = 0; i <= array.length - 1; i++)  {
+  for (var i = 0; i <= length; i++)  {
     if (array[i].length > longestLength) {
       longestLength = array[i].length;
       longestString = array[i];
@@ -71,15 +72,11 @@ function randomString(int) {
 	var stringArray = [];
 
   for (var i = 1; i < int + 1; i++ ) {
-  	newString += newString = alpha.charAt(Math.floor(Math.random() * alpha.length));
+  	newString += alpha.charAt(Math.floor(Math.random() * alpha.length));
   	stringArray.push(newString);
   }
-	console.log(stringArray);
+	return(stringArray);
 }
-
-randomString(3);
-
-
 
 /* DRIVER CODE to test Release 0
 newArray = ["long phrase", "longest phrase", "longer phrase"];
@@ -103,3 +100,10 @@ dog = {breed: "Labrador", age: 8, name: "Cinnamon"};
 doggie = {breed: "Saint Bernard", age: 8, name: "Rooney"};
 console.log(sameValue(dog, doggie));
 */
+
+//DRIVER Code to test Release 2
+for (var n = 1; n < 10; n++) {
+	var stringArray = randomString(5);
+	console.log(stringArray);
+	longestPhrase(stringArray);
+}
