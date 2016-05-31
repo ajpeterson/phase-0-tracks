@@ -56,6 +56,22 @@ function sameValue(obj1, obj2) {
  }
 }
 
+// Release 2 function
+function randomString(int) {
+	var alpha = "abcdefghijklmnopqrstuvwxyz";
+	var newString = "";
+	var stringArray = [];
+
+  for (var i = 1; i < int + 1; i++ ) {
+  	newString = alpha.random;
+  	stringArray.push(newString);
+  }
+	console.log(stringArray);
+}
+
+randomString(3);
+
+
 
 /* DRIVER CODE to test Release 0
 newArray = ["long phrase", "longest phrase", "longer phrase"];
