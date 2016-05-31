@@ -14,6 +14,15 @@ RELEASE 1 Pseudocode
  - compare values of each object for each key
  - if a key value pair is the same in each object return true
  - else return false
+
+ RELEASE 2 Pseudocode
+ - Define a function that will take an integer for an argument
+ - Initialize an empty array
+ - Set a variable of the alphabet
+ - Use a loop to iterate through the alphabet the number of times of the integer
+  - each time trhough generate a string of random characters
+  - push strings into the empty array
+- Return the array
 */
 
 // Release 0 function
@@ -57,9 +66,10 @@ longestPhrase(nameArray);
 
 cityArray = ["Seattle", "Chicago", "Paris", "Rome", "London"]
 longestPhrase(cityArray);
-*/
+
 
 // DRIVER CODE to test Release 1
 dog = {breed: "Saint Bernard", age: 10, name: "Cinnamon"};
 doggie = {breed: "Saint Bernard", age: 8, name: "Rooney"};
 console.log(sameValue(dog, doggie));
+*/
