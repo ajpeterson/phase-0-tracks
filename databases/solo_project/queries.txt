@@ -13,4 +13,10 @@ id|name|ironman_winner|world_champion|olympian|race_wins|bike|nation_id
 7|Gwen Jorgensen|false|true|true|21|Specialized Venge|1
 8|Ben Hoffman|true|false|true|4|Specialized Shiv|1
 
-2. 
+2. Update an item that meets some condition (displayed row to confirm update was taken):
+
+sqlite> UPDATE triathletes SET bike="Specialized Amira" WHERE name="Gwen Jorgensen";
+sqlite> SELECT * FROM triathletes WHERE name="Gwen Jorgensen";
+7|Gwen Jorgensen|false|true|true|21|Specialized Amira|1
+
+3.
