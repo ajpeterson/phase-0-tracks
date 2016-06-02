@@ -55,3 +55,57 @@ sqlite> SELECT * FROM triathletes
 6|Craig Alexander|true|true|false|22|Specialized Shiv|2
 7|Gwen Jorgensen|false|true|true|21|Specialized Amira|1
 8|Ben Hoffman|true|false|true|4|Specialized Shiv|1
+
+RELEASE 3: Different joins
+
+Cross Join command and output:
+sqlite> SELECT name, world_champion, nation FROM triathletes CROSS JOIN nations;
+Tim O'Donnel|false|USA
+Tim O'Donnel|false|Australia
+Tim O'Donnel|false|Germany
+Tim O'Donnel|false|Spain
+Mirinda Carfrae|true|USA
+Mirinda Carfrae|true|Australia
+Mirinda Carfrae|true|Germany
+Mirinda Carfrae|true|Spain
+Jan Frodeno|true|USA
+Jan Frodeno|true|Australia
+Jan Frodeno|true|Germany
+Jan Frodeno|true|Spain
+Sebastian Kienle|true|USA
+Sebastian Kienle|true|Australia
+Sebastian Kienle|true|Germany
+Sebastian Kienle|true|Spain
+Craig Alexander|true|USA
+Craig Alexander|true|Australia
+Craig Alexander|true|Germany
+Craig Alexander|true|Spain
+Gwen Jorgensen|true|USA
+Gwen Jorgensen|true|Australia
+Gwen Jorgensen|true|Germany
+Gwen Jorgensen|true|Spain
+Ben Hoffman|false|USA
+Ben Hoffman|false|Australia
+Ben Hoffman|false|Germany
+Ben Hoffman|false|Spain
+
+Inner Join command and output:
+sqlite> SELECT name, race_wins, bike, nation FROM triathletes INNER JOIN nations ON triathletes.nation_id = nations.id;
+Tim O'Donnel|5|Trek Speed Concept|USA
+Mirinda Carfrae|8|Felt IA|Australia
+Jan Frodeno|12|Canyon Speedmax|Germany
+Sebastian Kienle|13|Scott Plasma|Germany
+Craig Alexander|22|Specialized Shiv|Australia
+Gwen Jorgensen|21|Specialized Amira|USA
+Ben Hoffman|4|Specialized Shiv|USA
+
+Left Outer Join command and output:
+sqlite> SELECT name, race_wins, bike, nation FROM nations LEFT OUTER JOIN triathletes ON nations.id = triathletes.nation_id;
+Ben Hoffman|4|Specialized Shiv|USA
+Gwen Jorgensen|21|Specialized Amira|USA
+Tim O'Donnel|5|Trek Speed Concept|USA
+Craig Alexander|22|Specialized Shiv|Australia
+Mirinda Carfrae|8|Felt IA|Australia
+Jan Frodeno|12|Canyon Speedmax|Germany
+Sebastian Kienle|13|Scott Plasma|Germany
+|||Spain
