@@ -42,3 +42,16 @@ Javier Gomez|Specialized Venge|Spain
 Craig Alexander|Specialized Shiv|Australia
 Gwen Jorgensen|Specialized Amira|USA
 Ben Hoffman|Specialized Shiv|USA
+
+5. Display command and output to verify deletion of item based on condition:
+
+sqlite> DELETE FROM triathletes WHERE nation_id=4;
+sqlite> SELECT * FROM triathletes
+   ...> ;
+1|Tim O'Donnel|true|false|false|5|Trek Speed Concept|1
+2|Mirinda Carfrae|true|true|false|8|Felt IA|2
+3|Jan Frodeno|true|true|true|12|Canyon Speedmax|3
+4|Sebastian Kienle|true|true|false|13|Scott Plasma|3
+6|Craig Alexander|true|true|false|22|Specialized Shiv|2
+7|Gwen Jorgensen|false|true|true|21|Specialized Amira|1
+8|Ben Hoffman|true|false|true|4|Specialized Shiv|1
