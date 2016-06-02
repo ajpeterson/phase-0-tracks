@@ -19,4 +19,14 @@ sqlite> UPDATE triathletes SET bike="Specialized Amira" WHERE name="Gwen Jorgens
 sqlite> SELECT * FROM triathletes WHERE name="Gwen Jorgensen";
 7|Gwen Jorgensen|false|true|true|21|Specialized Amira|1
 
-3.
+3. Display information in both tables with one query:
+
+sqlite> SELECT * FROM triathletes, nations WHERE triathletes.nation_id = nations.id;
+1|Tim O'Donnel|true|false|false|5|Trek Speed Concept|1|1|USA
+2|Mirinda Carfrae|true|true|false|8|Felt IA|2|2|Australia
+3|Jan Frodeno|true|true|true|12|Canyon Speedmax|3|3|Germany
+4|Sebastian Kienle|true|true|false|13|Scott Plasma|3|3|Germany
+5|Javier Gomez|false|true|true|18|Specialized Venge|4|4|Spain
+6|Craig Alexander|true|true|false|22|Specialized Shiv|2|2|Australia
+7|Gwen Jorgensen|false|true|true|21|Specialized Amira|1|1|USA
+8|Ben Hoffman|true|false|true|4|Specialized Shiv|1|1|USA
