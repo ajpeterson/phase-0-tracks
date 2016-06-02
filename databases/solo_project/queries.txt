@@ -1,0 +1,111 @@
+RELEASE 2 SQL Queries:
+
+1. Display information from one table:
+
+sqlite> SELECT * FROM triathletes;
+id|name|ironman_winner|world_champion|olympian|race_wins|bike|nation_id
+1|Tim O'Donnel|true|false|false|5|Trek Speed Concept|1
+2|Mirinda Carfrae|true|true|false|8|Felt IA|2
+3|Jan Frodeno|true|true|true|12|Canyon Speedmax|3
+4|Sebastian Kienle|true|true|false|13|Scott Plasma|3
+5|Javier Gomez|false|true|true|18|Specialized Venge|4
+6|Craig Alexander|true|true|false|22|Specialized Shiv|2
+7|Gwen Jorgensen|false|true|true|21|Specialized Venge|1
+8|Ben Hoffman|true|false|true|4|Specialized Shiv|1
+
+2. Update an item that meets some condition (displayed row to confirm update was taken):
+
+sqlite> UPDATE triathletes SET bike="Specialized Amira" WHERE name="Gwen Jorgensen";
+sqlite> SELECT * FROM triathletes WHERE name="Gwen Jorgensen";
+7|Gwen Jorgensen|false|true|true|21|Specialized Amira|1
+
+3. Display information in both tables with one query:
+
+sqlite> SELECT * FROM triathletes, nations WHERE triathletes.nation_id = nations.id;
+1|Tim O'Donnel|true|false|false|5|Trek Speed Concept|1|1|USA
+2|Mirinda Carfrae|true|true|false|8|Felt IA|2|2|Australia
+3|Jan Frodeno|true|true|true|12|Canyon Speedmax|3|3|Germany
+4|Sebastian Kienle|true|true|false|13|Scott Plasma|3|3|Germany
+5|Javier Gomez|false|true|true|18|Specialized Venge|4|4|Spain
+6|Craig Alexander|true|true|false|22|Specialized Shiv|2|2|Australia
+7|Gwen Jorgensen|false|true|true|21|Specialized Amira|1|1|USA
+8|Ben Hoffman|true|false|true|4|Specialized Shiv|1|1|USA
+
+4. Display a narrower column selection from both tables with one query:
+
+sqlite> SELECT triathletes.name, triathletes.bike, nations.nation FROM triathletes JOIN nations ON triathletes.nation_id = nations.id;
+Tim O'Donnel|Trek Speed Concept|USA
+Mirinda Carfrae|Felt IA|Australia
+Jan Frodeno|Canyon Speedmax|Germany
+Sebastian Kienle|Scott Plasma|Germany
+Javier Gomez|Specialized Venge|Spain
+Craig Alexander|Specialized Shiv|Australia
+Gwen Jorgensen|Specialized Amira|USA
+Ben Hoffman|Specialized Shiv|USA
+
+5. Display command and output to verify deletion of item based on condition:
+
+sqlite> DELETE FROM triathletes WHERE nation_id=4;
+sqlite> SELECT * FROM triathletes
+   ...> ;
+1|Tim O'Donnel|true|false|false|5|Trek Speed Concept|1
+2|Mirinda Carfrae|true|true|false|8|Felt IA|2
+3|Jan Frodeno|true|true|true|12|Canyon Speedmax|3
+4|Sebastian Kienle|true|true|false|13|Scott Plasma|3
+6|Craig Alexander|true|true|false|22|Specialized Shiv|2
+7|Gwen Jorgensen|false|true|true|21|Specialized Amira|1
+8|Ben Hoffman|true|false|true|4|Specialized Shiv|1
+
+RELEASE 3: Different joins
+
+Cross Join command and output:
+sqlite> SELECT name, world_champion, nation FROM triathletes CROSS JOIN nations;
+Tim O'Donnel|false|USA
+Tim O'Donnel|false|Australia
+Tim O'Donnel|false|Germany
+Tim O'Donnel|false|Spain
+Mirinda Carfrae|true|USA
+Mirinda Carfrae|true|Australia
+Mirinda Carfrae|true|Germany
+Mirinda Carfrae|true|Spain
+Jan Frodeno|true|USA
+Jan Frodeno|true|Australia
+Jan Frodeno|true|Germany
+Jan Frodeno|true|Spain
+Sebastian Kienle|true|USA
+Sebastian Kienle|true|Australia
+Sebastian Kienle|true|Germany
+Sebastian Kienle|true|Spain
+Craig Alexander|true|USA
+Craig Alexander|true|Australia
+Craig Alexander|true|Germany
+Craig Alexander|true|Spain
+Gwen Jorgensen|true|USA
+Gwen Jorgensen|true|Australia
+Gwen Jorgensen|true|Germany
+Gwen Jorgensen|true|Spain
+Ben Hoffman|false|USA
+Ben Hoffman|false|Australia
+Ben Hoffman|false|Germany
+Ben Hoffman|false|Spain
+
+Inner Join command and output:
+sqlite> SELECT name, race_wins, bike, nation FROM triathletes INNER JOIN nations ON triathletes.nation_id = nations.id;
+Tim O'Donnel|5|Trek Speed Concept|USA
+Mirinda Carfrae|8|Felt IA|Australia
+Jan Frodeno|12|Canyon Speedmax|Germany
+Sebastian Kienle|13|Scott Plasma|Germany
+Craig Alexander|22|Specialized Shiv|Australia
+Gwen Jorgensen|21|Specialized Amira|USA
+Ben Hoffman|4|Specialized Shiv|USA
+
+Left Outer Join command and output:
+sqlite> SELECT name, race_wins, bike, nation FROM nations LEFT OUTER JOIN triathletes ON nations.id = triathletes.nation_id;
+Ben Hoffman|4|Specialized Shiv|USA
+Gwen Jorgensen|21|Specialized Amira|USA
+Tim O'Donnel|5|Trek Speed Concept|USA
+Craig Alexander|22|Specialized Shiv|Australia
+Mirinda Carfrae|8|Felt IA|Australia
+Jan Frodeno|12|Canyon Speedmax|Germany
+Sebastian Kienle|13|Scott Plasma|Germany
+|||Spain
