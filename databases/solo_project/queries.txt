@@ -1,1 +1,16 @@
 RELEASE 2 SQL Queries:
+
+1. Display information from one table:
+
+sqlite> SELECT * FROM triathletes;
+id|name|ironman_winner|world_champion|olympian|race_wins|bike|nation_id
+1|Tim O'Donnel|true|false|false|5|Trek Speed Concept|1
+2|Mirinda Carfrae|true|true|false|8|Felt IA|2
+3|Jan Frodeno|true|true|true|12|Canyon Speedmax|3
+4|Sebastian Kienle|true|true|false|13|Scott Plasma|3
+5|Javier Gomez|false|true|true|18|Specialized Venge|4
+6|Craig Alexander|true|true|false|22|Specialized Shiv|2
+7|Gwen Jorgensen|false|true|true|21|Specialized Venge|1
+8|Ben Hoffman|true|false|true|4|Specialized Shiv|1
+
+2. 
