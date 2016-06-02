@@ -30,3 +30,15 @@ sqlite> SELECT * FROM triathletes, nations WHERE triathletes.nation_id = nations
 6|Craig Alexander|true|true|false|22|Specialized Shiv|2|2|Australia
 7|Gwen Jorgensen|false|true|true|21|Specialized Amira|1|1|USA
 8|Ben Hoffman|true|false|true|4|Specialized Shiv|1|1|USA
+
+4. Display a narrower column selection from both tables with one query:
+
+sqlite> SELECT triathletes.name, triathletes.bike, nations.nation FROM triathletes JOIN nations ON triathletes.nation_id = nations.id;
+Tim O'Donnel|Trek Speed Concept|USA
+Mirinda Carfrae|Felt IA|Australia
+Jan Frodeno|Canyon Speedmax|Germany
+Sebastian Kienle|Scott Plasma|Germany
+Javier Gomez|Specialized Venge|Spain
+Craig Alexander|Specialized Shiv|Australia
+Gwen Jorgensen|Specialized Amira|USA
+Ben Hoffman|Specialized Shiv|USA
