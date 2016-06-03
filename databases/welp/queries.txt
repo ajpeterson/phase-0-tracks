@@ -1,3 +1,48 @@
 8.4 Release 2:
 
 1. INPUT:
+SELECT * FROM reviews, users, businesses WHERE reviews.user_id = users.id AND reviews.business_id = businesses.id;
+
+OUTPUT:
+1|5|Great pizza!|5|2|2|Nora|Grace|5|Via Trubunali Pizza
+2|3|Late to appointment|3|7|7|Jane|Wellborn|3|Beacon Plumbing
+3|1|Burger undercooked.|6|4|4|Ryan|Giggs|6|The Ram Sports Bar
+
+
+2. INPUT:
+SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM reviews, users, businesses WHERE reviews.user_id = users.id AND reviews.business_id = businesses.id;
+
+OUTPUT:
+Nora|Grace|Via Trubunali Pizza|5|Great pizza!
+Jane|Wellborn|Beacon Plumbing|3|Late to appointment
+Ryan|Giggs|The Ram Sports Bar|1|Burger undercooked.
+
+
+3. INPUT:
+SELECT * FROM reviews, users, businesses WHERE businesses.name="Athletes Lounge";
+
+OUTPUT:
+1|5|Great pizza!|5|2|1|Wayne|Rooney|1|Athletes Lounge
+1|5|Great pizza!|5|2|2|Nora|Grace|1|Athletes Lounge
+1|5|Great pizza!|5|2|3|Nicole|Bloor|1|Athletes Lounge
+1|5|Great pizza!|5|2|4|Ryan|Giggs|1|Athletes Lounge
+1|5|Great pizza!|5|2|5|Aaron|Peterson|1|Athletes Lounge
+1|5|Great pizza!|5|2|6|James|Alexander|1|Athletes Lounge
+1|5|Great pizza!|5|2|7|Jane|Wellborn|1|Athletes Lounge
+1|5|Great pizza!|5|2|8|Jared|Peters|1|Athletes Lounge
+2|3|Late to appointment|3|7|1|Wayne|Rooney|1|Athletes Lounge
+2|3|Late to appointment|3|7|2|Nora|Grace|1|Athletes Lounge
+2|3|Late to appointment|3|7|3|Nicole|Bloor|1|Athletes Lounge
+2|3|Late to appointment|3|7|4|Ryan|Giggs|1|Athletes Lounge
+2|3|Late to appointment|3|7|5|Aaron|Peterson|1|Athletes Lounge
+2|3|Late to appointment|3|7|6|James|Alexander|1|Athletes Lounge
+2|3|Late to appointment|3|7|7|Jane|Wellborn|1|Athletes Lounge
+2|3|Late to appointment|3|7|8|Jared|Peters|1|Athletes Lounge
+3|1|Burger undercooked.|6|4|1|Wayne|Rooney|1|Athletes Lounge
+3|1|Burger undercooked.|6|4|2|Nora|Grace|1|Athletes Lounge
+3|1|Burger undercooked.|6|4|3|Nicole|Bloor|1|Athletes Lounge
+3|1|Burger undercooked.|6|4|4|Ryan|Giggs|1|Athletes Lounge
+3|1|Burger undercooked.|6|4|5|Aaron|Peterson|1|Athletes Lounge
+3|1|Burger undercooked.|6|4|6|James|Alexander|1|Athletes Lounge
+3|1|Burger undercooked.|6|4|7|Jane|Wellborn|1|Athletes Lounge
+3|1|Burger undercooked.|6|4|8|Jared|Peters|1|Athletes Lounge
