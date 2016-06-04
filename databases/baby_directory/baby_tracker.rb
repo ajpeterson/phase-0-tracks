@@ -11,6 +11,6 @@ require_relative 'babies'
 # require_relative 'caregivers'
 
 db = SQLite3::Database.new("baby_tracker.db")
-db.execute("babies.create_table")
 
 # initialize babies class to create table
+Babies.new

@@ -25,15 +25,15 @@ Create a class for babies
 require 'sqlite3'
 require 'faker'
 
-require_relative 'baby_tracker'
+#require_relative 'baby_tracker'
 
 class Babies
 
   attr_accessor :last_diaper, :last_bottle
 
   def initialize
-
-    <<-SQL
+    db = SQLite3::Database.new("baby_tracker.db")
+    db.execute <<-SQL
       CREATE TABLE IF NOT EXISTS babies (
         id INTEGER PRIMARY KEY,
         first_name VARCHAR(255),
