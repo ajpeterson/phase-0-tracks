@@ -9,6 +9,7 @@ require 'faker'
 
 require_relative 'babies'
 require_relative 'caregivers'
+require_relative 'babies_caregivers'
 
 db = SQLite3::Database.new("baby_tracker.db")
 
@@ -16,3 +17,5 @@ db = SQLite3::Database.new("baby_tracker.db")
 Babies.new
 # initialize caregivers class to create table
 Caregivers.new
+# initialize junction class to create babies_caregivers join table
+Junction.new
