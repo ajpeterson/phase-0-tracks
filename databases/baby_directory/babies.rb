@@ -33,5 +33,10 @@ class Babies
   def add_baby
   end
 
+  def age_update
+  end
+
+  def special_needs
+  end
 
 end
