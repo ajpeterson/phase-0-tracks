@@ -13,5 +13,10 @@ Create a class for babies
   - method to add a comment for special needs
     - input: string of special instructions
     - use UPDATE sql call to add or update the special needs of a baby
-    - output: new instructions will show under special needs 
+    - output: new instructions will show under special needs
 =end
+
+class Babies
+
+  
+end
