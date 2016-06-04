@@ -27,7 +27,21 @@ require 'faker'
 
 class Babies
 
+  attr_accessor :last_diaper, :last_bottle
+
   def initialize
+    <<-SQL
+      CREATE TABLE IF NOT EXISTS babies (
+        id INTEGER PRIMARY KEY,
+        first_name VARCHAR(255),
+        last_name VARCHAR(255),
+        age_in_weeks INT,
+        special_needs VARCHAR(255)
+      )
+    SQL
+
+    @last_diaper = last_diaper
+    @last_bottle = last_bottle
   end
 
   def add_baby
