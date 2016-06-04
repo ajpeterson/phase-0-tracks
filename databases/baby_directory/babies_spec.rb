@@ -13,6 +13,9 @@ describe Babies do
     expect(babies.last_bottle).to eq "9:00am"
   end
 
-  
+  it "adds a baby to the directory" do
+    babies.add_baby(baby_tracker.db, "Andrew", "Peterson", 12, "None")
+    expect(babies.add_baby).to eq ["Andrew", "Peterson", 12, "None"]
+  end
 
 end
