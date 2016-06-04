@@ -21,6 +21,10 @@ Create a class for babies
 * will add in if time permits
 =end
 
+# require gems
+require 'sqlite3'
+require 'faker'
+
 class Babies
 
   def initialize
