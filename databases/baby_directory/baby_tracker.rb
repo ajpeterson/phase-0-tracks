@@ -8,9 +8,11 @@ require 'sqlite3'
 require 'faker'
 
 require_relative 'babies'
-# require_relative 'caregivers'
+require_relative 'caregivers'
 
 db = SQLite3::Database.new("baby_tracker.db")
 
 # initialize babies class to create table
 Babies.new
+# initialize caregivers class to create table
+Caregivers.new
