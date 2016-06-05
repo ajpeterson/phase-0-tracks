@@ -25,9 +25,6 @@ join = Junction.new
 baby.add_baby(db, "Andrew", "Peterson", 12, "None")
 baby.add_baby(db, "Nora", "Peterson", 10, "None")
 
-# DELETE duplicate baby entry
-db.execute("DELETE FROM babies WHERE id=3")
-
 # POPULATE babies table
 15.times do
   baby.add_baby(db, Faker::Name.first_name, Faker::Name.last_name, 0, "None")
