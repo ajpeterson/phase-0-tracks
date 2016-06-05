@@ -19,14 +19,10 @@ caregiver = Caregivers.new
 join = Junction.new
 
 =begin
-=================DRIVER CODE====================
-
+=================DRIVER CODE for TESTING====================
 # TEST babies added to table
 baby.add_baby(db, "Andrew", "Peterson", 12, "None")
 baby.add_baby(db, "Nora", "Peterson", 10, "None")
-
-# DELETE duplicate baby entry
-db.execute("DELETE FROM babies WHERE id=3")
 
 # POPULATE babies table
 15.times do
@@ -37,4 +33,8 @@ end
 4.times do
   caregiver.add_caregiver(db, Faker::Name.first_name, Faker::Name.last_name, rand(12), @cpr_cert, @first_aid_cert)
 end
+
+METHOD TESTS
+baby.age_update(db, 9, 12)
+caregiver.cpr_update(db, "true", 2)
 =end

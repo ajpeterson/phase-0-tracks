@@ -52,11 +52,11 @@ class Babies
   end
 
   def age_update(db, age_in_weeks, id)
-    db.execute("UPDATE babies SET age_in_weeks=?, WHERE id=?", [age_in_weeks, id])
+    db.execute("UPDATE babies SET age_in_weeks=? WHERE id=?", [age_in_weeks, id])
   end
 
   def special_needs(db, special_needs, id)
-    db.execute("UPDATE babies SET special_needs=?, WHERE id=?", [special_needs, id])
+    db.execute("UPDATE babies SET special_needs=? WHERE id=?", [special_needs, id])
   end
 
 end
