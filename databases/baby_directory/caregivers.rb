@@ -51,15 +51,15 @@ class Caregivers
   end
 
   def experience_update(db, yrs_experience, id)
-    db.execute("UPDATE caregivers SET yrs_experience=?, WHERE id=?", [yrs_experience, id])
+    db.execute("UPDATE caregivers SET yrs_experience=? WHERE id=?", [yrs_experience, id])
   end
 
   def cpr_update(db, cpr_cert, id)
-    db.execute("UPDATE caregivers SET cpr_cert=?, WHERE id=?", [cpr_cert, id])
+    db.execute("UPDATE caregivers SET cpr_cert=? WHERE id=?", [cpr_cert, id])
   end
 
   def first_aid_update(db, cpr_cert, id)
-    db.execute("UPDATE caregivers SET first_aid_cert=?, WHERE id=?", [first_aid_cert, id])
+    db.execute("UPDATE caregivers SET first_aid_cert=? WHERE id=?", [first_aid_cert, id])
   end
 
 end

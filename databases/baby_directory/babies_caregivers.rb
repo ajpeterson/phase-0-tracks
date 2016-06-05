@@ -18,8 +18,6 @@ Create a class for a junction table in a many to many relationship
 require 'sqlite3'
 require 'faker'
 
-require_relative 'babies'
-
 class Junction
 
   def initialize
@@ -39,11 +37,11 @@ class Junction
   end
 
   def diaper_update(db, last_diaper, babies_id, caregivers_id)
-    db.execute("UPDATE babies_caregivers SET last_diaper=?, WHERE babies_caregivers.babies_id = ? AND babies_caregivers.caregivers_id = ?", [last_diaper, babies.id, caregivers.id])
+    db.execute("UPDATE babies_caregivers SET last_diaper=? WHERE babies_caregivers.babies_id = ? AND babies_caregivers.caregivers_id = ?", [@last_diaper, babies_id, caregivers_id])
   end
 
   def bottle_update(db, last_bottle, babies_id, caregivers_id)
-    db.execute("UPDATE babies_caregivers SET last_bottle=?, WHERE babies_caregivers.babies_id = ? AND babies_caregivers.caregivers_id = ?", [last_bottle, babies.id, caregivers.id])
+    db.execute("UPDATE babies_caregivers SET last_bottle=? WHERE babies_caregivers.babies_id = ? AND babies_caregivers.caregivers_id = ?", [@last_bottle, babies_id, caregivers_id])
   end
 
 end
