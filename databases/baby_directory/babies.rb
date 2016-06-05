@@ -48,7 +48,7 @@ class Babies
   end
 
   def add_baby(db, first_name, last_name, age_in_weeks, special_needs)
-    db.execute("INSERT INTO babies (first_name, last_name, age_in_weeks, special_needs) VALUES (?, ?)", [first_name, last_name, age_in_weeks, special_needs])
+    db.execute("INSERT INTO babies (first_name, last_name, age_in_weeks, special_needs) VALUES (?, ?, ?, ?)", [first_name, last_name, age_in_weeks, special_needs])
   end
 
   def age_update(db, age_in_weeks, id)
