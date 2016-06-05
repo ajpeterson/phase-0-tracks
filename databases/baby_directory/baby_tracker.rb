@@ -13,14 +13,28 @@ require_relative 'babies_caregivers'
 
 db = SQLite3::Database.new("baby_tracker.db")
 
-# initialize babies class to create table
+# INITIALIZE classes to create tables in db
 baby = Babies.new
-
-# initialize caregivers class to create table
 caregiver = Caregivers.new
-
-# initialize junction class to create babies_caregivers join table
 join = Junction.new
 
-# test baby added to table
+=begin
+=================DRIVER CODE====================
+
+# TEST babies added to table
 baby.add_baby(db, "Andrew", "Peterson", 12, "None")
+baby.add_baby(db, "Nora", "Peterson", 10, "None")
+
+# DELETE duplicate baby entry
+db.execute("DELETE FROM babies WHERE id=3")
+
+# POPULATE babies table
+15.times do
+  baby.add_baby(db, Faker::Name.first_name, Faker::Name.last_name, 0, "None")
+end
+
+# POPULATE caregivers table
+4.times do
+  caregiver.add_caregiver(db, Faker::Name.first_name, Faker::Name.last_name, rand(12), @cpr_cert, @first_aid_cert)
+end
+=end
