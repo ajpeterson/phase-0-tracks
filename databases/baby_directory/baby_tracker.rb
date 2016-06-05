@@ -14,10 +14,13 @@ require_relative 'babies_caregivers'
 db = SQLite3::Database.new("baby_tracker.db")
 
 # initialize babies class to create table
-# Babies.new
+baby = Babies.new
 
 # initialize caregivers class to create table
-# Caregivers.new
+caregiver = Caregivers.new
 
 # initialize junction class to create babies_caregivers join table
-# Junction.new
+join = Junction.new
+
+# test baby added to table
+baby.add_baby(db, "Andrew", "Peterson", 12, "None")
