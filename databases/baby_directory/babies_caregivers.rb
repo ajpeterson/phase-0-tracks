@@ -30,7 +30,9 @@ class Junction
         last_diaper VARCHAR(255),
         last_bottle VARCHAR(255),
         babies_id INT,
-        caregivers_id INT
+        caregivers_id INT,
+        FOREIGN KEY (babies_id) REFERENCES babies(id),
+        FOREIGN KEY (caregivers_id) REFERENCES caregivers(id)
       )
     SQL
 
