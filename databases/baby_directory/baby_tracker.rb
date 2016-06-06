@@ -41,7 +41,9 @@ METHOD TESTS
 baby.age_update(db, 9, 12)
 baby.special_needs(db, "Allergic to peanuts.", 3)
 caregiver.cpr_update(db, "true", 2)
-
-=end
 caregiver.experience_update(db, 2, 2)
 caregiver.first_aid_update(db, "true", 1)
+join.diaper_update(db, "9:15am", 2, 8)
+join.bottle_update(db, "11:05am", 2, 9)
+=end
+caregiver.add_caregiver(db, "Jared", "Peters", 3, "true", "true")
