@@ -42,12 +42,12 @@ class Caregivers
       )
     SQL
 
-    @cpr_cert = "false"
-    @first_aid_cert = "false"
+    @cpr_cert = cpr_cert
+    @first_aid_cert = first_aid_cert
   end
 
   def add_caregiver(db, first_name, last_name, yrs_experience, cpr_cert, first_aid_cert)
-    db.execute("INSERT INTO caregivers (first_name, last_name, yrs_experience, cpr_cert, first_aid_cert) VALUES (?, ?, ?, ?, ?)", [first_name, last_name, yrs_experience, @cpr_cert, @first_aid_cert])
+    db.execute("INSERT INTO caregivers (first_name, last_name, yrs_experience, cpr_cert, first_aid_cert) VALUES (?, ?, ?, ?, ?)", [first_name, last_name, yrs_experience, cpr_cert, first_aid_cert])
   end
 
   def experience_update(db, yrs_experience, id)
