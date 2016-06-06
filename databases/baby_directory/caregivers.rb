@@ -23,8 +23,6 @@ Create a class for caregivers
 require 'sqlite3'
 require 'faker'
 
-#require_relative 'baby_tracker'
-
 class Caregivers
 
   attr_accessor :cpr_cert, :first_aid_cert
@@ -42,12 +40,12 @@ class Caregivers
       )
     SQL
 
-    @cpr_cert = "false"
-    @first_aid_cert = "false"
+    @cpr_cert = cpr_cert
+    @first_aid_cert = first_aid_cert
   end
 
   def add_caregiver(db, first_name, last_name, yrs_experience, cpr_cert, first_aid_cert)
-    db.execute("INSERT INTO caregivers (first_name, last_name, yrs_experience, cpr_cert, first_aid_cert) VALUES (?, ?, ?, ?, ?)", [first_name, last_name, yrs_experience, @cpr_cert, @first_aid_cert])
+    db.execute("INSERT INTO caregivers (first_name, last_name, yrs_experience, cpr_cert, first_aid_cert) VALUES (?, ?, ?, ?, ?)", [first_name, last_name, yrs_experience, cpr_cert, first_aid_cert])
   end
 
   def experience_update(db, yrs_experience, id)
@@ -58,7 +56,7 @@ class Caregivers
     db.execute("UPDATE caregivers SET cpr_cert=? WHERE id=?", [cpr_cert, id])
   end
 
-  def first_aid_update(db, cpr_cert, id)
+  def first_aid_update(db, first_aid_cert, id)
     db.execute("UPDATE caregivers SET first_aid_cert=? WHERE id=?", [first_aid_cert, id])
   end
 

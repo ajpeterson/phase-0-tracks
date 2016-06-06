@@ -36,12 +36,26 @@ class Junction
 
   end
 
-  def diaper_update(db, last_diaper, babies_id, caregivers_id)
-    db.execute("UPDATE babies_caregivers SET last_diaper=? WHERE babies_caregivers.babies_id = ? AND babies_caregivers.caregivers_id = ?", [@last_diaper, babies_id, caregivers_id])
+  def data_setup(db, last_diaper, last_bottle, babies_id, caregivers_id)
+    i = 1
+    while i <= 15
+      db.execute("INSERT INTO babies_caregivers (last_diaper, last_bottle, babies_id, caregivers_id) VALUES (?, ?, ?, ?)", ["N/A", "N/A", i, rand(1...7)])
+      i += 1
+    end
   end
 
-  def bottle_update(db, last_bottle, babies_id, caregivers_id)
-    db.execute("UPDATE babies_caregivers SET last_bottle=? WHERE babies_caregivers.babies_id = ? AND babies_caregivers.caregivers_id = ?", [@last_bottle, babies_id, caregivers_id])
+  def add_for_care(db, last_diaper, last_bottle, babies_id, caregivers_id)
+    index = db.execute("SELECT Count(*) FROM babies_caregivers")
+    count = index[0][0] + 1
+    db.execute("INSERT INTO babies_caregivers (last_diaper, last_bottle, babies_id, caregivers_id) VALUES (?, ?, ?, ?)", ["N/A", "N/A", count, 0])
+  end
+
+  def diaper_update(db, last_diaper, caregivers_id, babies_id)
+    db.execute("UPDATE babies_caregivers SET last_diaper=?, caregivers_id = ? WHERE babies_caregivers.babies_id = ?", [last_diaper, caregivers_id, babies_id])
+  end
+
+  def bottle_update(db, last_bottle, caregivers_id, babies_id)
+    db.execute("UPDATE babies_caregivers SET last_bottle=?, caregivers_id = ? WHERE babies_caregivers.babies_id = ?", [last_bottle, caregivers_id, babies_id])
   end
 
 end
