@@ -34,6 +34,9 @@ end
   caregiver.add_caregiver(db, Faker::Name.first_name, Faker::Name.last_name, rand(12), @cpr_cert, @first_aid_cert)
 end
 
+# POPULATE babies_caregivers table
+join.data_setup(db, "N/A", "N/A", 0, 0)
+
 METHOD TESTS
 baby.age_update(db, 9, 12)
 caregiver.cpr_update(db, "true", 2)

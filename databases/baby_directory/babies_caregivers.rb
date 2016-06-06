@@ -36,6 +36,14 @@ class Junction
 
   end
 
+  def data_setup(db, last_diaper, last_bottle, babies_id, caregivers_id)
+    i = 1
+    while i <= 15
+      db.execute("INSERT INTO babies_caregivers (last_diaper, last_bottle, babies_id, caregivers_id) VALUES (?, ?, ?, ?)", ["N/A", "N/A", i, rand(1...5)])
+      i += 1
+    end
+  end
+
   def diaper_update(db, last_diaper, babies_id, caregivers_id)
     db.execute("UPDATE babies_caregivers SET last_diaper=? WHERE babies_caregivers.babies_id = ? AND babies_caregivers.caregivers_id = ?", [@last_diaper, babies_id, caregivers_id])
   end
