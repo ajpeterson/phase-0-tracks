@@ -23,8 +23,6 @@ Create a class for caregivers
 require 'sqlite3'
 require 'faker'
 
-#require_relative 'baby_tracker'
-
 class Caregivers
 
   attr_accessor :cpr_cert, :first_aid_cert

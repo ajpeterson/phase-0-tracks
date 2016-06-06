@@ -25,8 +25,6 @@ Create a class for babies
 require 'sqlite3'
 require 'faker'
 
-#require_relative 'baby_tracker'
-
 class Babies
 
   attr_accessor :last_diaper, :last_bottle

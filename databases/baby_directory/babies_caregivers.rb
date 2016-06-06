@@ -47,7 +47,7 @@ class Junction
   def add_for_care(db, last_diaper, last_bottle, babies_id, caregivers_id)
     index = db.execute("SELECT Count(*) FROM babies_caregivers")
     count = index[0][0] + 1
-    db.execute("INSERT INTO babies_caregivers (last_diaper, last_bottle, babies_id, caregivers_id) VALUES (?, ?, ?, ?)", ["N/A", "N/A", count, rand(1...7)])
+    db.execute("INSERT INTO babies_caregivers (last_diaper, last_bottle, babies_id, caregivers_id) VALUES (?, ?, ?, ?)", ["N/A", "N/A", count, 0])
   end
 
   def diaper_update(db, last_diaper, caregivers_id, babies_id)
