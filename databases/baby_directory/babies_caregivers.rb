@@ -44,12 +44,12 @@ class Junction
     end
   end
 
-  def diaper_update(db, last_diaper, babies_id, caregivers_id)
-    db.execute("UPDATE babies_caregivers SET last_diaper=? WHERE babies_caregivers.babies_id = ? AND babies_caregivers.caregivers_id = ?", [@last_diaper, babies_id, caregivers_id])
+  def diaper_update(db, last_diaper, caregivers_id, babies_id)
+    db.execute("UPDATE babies_caregivers SET last_diaper=?, caregivers_id = ? WHERE babies_caregivers.babies_id = ?", [last_diaper, caregivers_id, babies_id])
   end
 
-  def bottle_update(db, last_bottle, babies_id, caregivers_id)
-    db.execute("UPDATE babies_caregivers SET last_bottle=? WHERE babies_caregivers.babies_id = ? AND babies_caregivers.caregivers_id = ?", [@last_bottle, babies_id, caregivers_id])
+  def bottle_update(db, last_bottle, caregivers_id, babies_id)
+    db.execute("UPDATE babies_caregivers SET last_bottle=?, caregivers_id = ? WHERE babies_caregivers.babies_id = ?", [last_bottle, caregivers_id, babies_id])
   end
 
 end
