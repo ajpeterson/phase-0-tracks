@@ -169,7 +169,7 @@ def update(db, baby, caregiver, join)
 end
 
 #=============PRINT METHOD BEGIN==============
-def print(db, baby, caregiver, join)
+def print_dir(db, baby, caregiver, join)
   puts "Please specify which directory you wish to view: a.) baby, b.) caregiver or c.) feeding/diaper tracker (Please type the corresponding letter)."
   user_selection = gets.chomp.downcase
 
@@ -194,23 +194,25 @@ def print(db, baby, caregiver, join)
     end
   end
 end
-print(db, baby, caregiver, join)
-=begin
+
+
 baby_directory = false
 until baby_directory
-  puts "Please specify if you wish to add a listing to the directory or update an existing entry (Please type add or update). Type 'quit' when finished adding and updating the directory."
+  puts "\nPlease specify if you wish to add a listing to the directory, update an existing entry or print a directory (Please type add, update or print). Type 'quit' when finished adding and updating the directory."
   user_response = gets.chomp.downcase
   case user_response
   when "add"
     add(db, baby, caregiver, join)
   when "update"
     update(db, baby, caregiver, join)
+  when "print"
+    print_dir(db, baby, caregiver, join)
   else
-    puts "Thank you. Your additions and updates have been recorded."
+    puts "\nThank you. Your additions and updates have been recorded."
     baby_directory = true
   end
 end
-=end
+
 
 =begin
 =================DRIVER CODE for TESTING====================
