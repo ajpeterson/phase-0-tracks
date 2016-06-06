@@ -81,8 +81,73 @@ def add(db, baby, caregiver, join)
   end
 end
 
-add(db, baby, caregiver, join)
+def update(db, baby, caregiver, join)
+  puts "Please specify if you would like to update 'baby' information or 'caregiver' information."
+  user_response = gets.chomp.downcase
 
+  if user_response == "baby"
+    puts "Please specify the baby's id number you wish to make changes to?"
+    babies_id = gets.chomp.to_i
+
+    puts "Please specify what you would like to update: a.) age, b.) special needs, c.) last bottle or d.) last diaper change. (Please type corresponding letter.)"
+    user_selection = gets.chomp.downcase
+
+      case user_selection
+      when "a"
+        puts "Please specify the baby's new age in weeks (please enter a number)."
+        age_in_weeks = gets.chomp.to_i
+        baby.age_update(db, age_in_weeks, babies_id)
+      when "b"
+        puts "Please specify any special needs for this baby."
+        special_needs = gets.chomp
+        baby.special_needs(db, special_needs, babies_id)
+      when "c"
+        puts "Please specify the time the last bottle feeding began. (EX: 1:30pm)"
+        last_bottle = gets.chomp
+        puts "Please provide the caregiver's id number who administered the bottle."
+        caregivers_id = gets.chomp.to_i
+        join.bottle_update(db, last_bottle, caregivers_id, babies_id)
+      else
+        puts "Please specify the time of the last diaper change. (EX: 1:30pm)"
+        last_bottle = gets.chomp
+        puts "Please provide the caregiver's id number who changed the diaper."
+        caregivers_id = gets.chomp.to_i
+        join.diaper_update(db, last_diaper, caregivers_id, babies_id)
+      end
+  else
+    puts "Please specify the caregiver's id number you wish to make changes to?"
+    caregivers_id = gets.chomp.to_i
+    
+    puts "Please specify what you would like to update: a.) years of experience, b.) CPR certification or c.) First Aid certification. (Please type corresponding letter.)"
+    user_selection = gets.chomp.downcase
+
+      case user_selection
+      when "a"
+        puts "Please specify the updated years of experience for the caregiver (please enter a number)."
+        yrs_experience = gets.chomp.to_i
+        caregiver.experience_update(db, yrs_experience, caregivers_id)
+      when "b"
+        puts "Please specify if the caregiver has completed CPR certification. (y/n)"
+        cpr_cert = gets.chomp.downcase
+        if cpr_cert == "y"
+          cpr_cert = "true"
+        else
+          cpr_cert = "false"
+        end
+        caregiver.cpr_update(db, cpr_cert, caregivers_id)
+      else
+        puts "Please specify if the caregiver has completed First Aid certification. (y/n)"
+        first_aid_cert = gets.chomp.downcase
+        if first_aid_cert == "y"
+          first_aid_cert = "true"
+        else
+          first_aid_cert = "false"
+        end
+        caregiver.first_aid_update(db, first_aid_cert, caregivers_id)
+      end
+  end
+end
+update(db, baby, caregiver, join)
 =begin
 =================DRIVER CODE for TESTING====================
 # TEST babies added to table
