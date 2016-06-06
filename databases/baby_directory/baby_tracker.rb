@@ -26,7 +26,7 @@ baby.add_baby(db, "Nora", "Peterson", 10, "None")
 
 # POPULATE babies table
 15.times do
-  baby.add_baby(db, Faker::Name.first_name, Faker::Name.last_name, 0, "None")
+  baby.add_baby(db, Faker::Name.first_name, Faker::Name.last_name, rand(12), "None")
 end
 
 # POPULATE caregivers table
