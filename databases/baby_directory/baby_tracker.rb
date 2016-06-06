@@ -86,11 +86,12 @@ def update(db, baby, caregiver, join)
   user_response = gets.chomp.downcase
 
   if user_response == "baby"
+    puts "Please specify the baby's id number you wish to make changes to?"
+    babies_id = gets.chomp.to_i
+
     puts "Please specify what you would like to update: a.) age, b.) special needs, c.) last bottle or d.) last diaper change. (Please type corresponding letter.)"
     user_selection = gets.chomp.downcase
 
-    puts "Please specify the baby's id number you wish to make changes to?"
-    babies_id = gets.chomp.to_i
       case user_selection
       when "a"
         puts "Please specify the baby's new age in weeks (please enter a number)."
@@ -114,11 +115,12 @@ def update(db, baby, caregiver, join)
         join.diaper_update(db, last_diaper, caregivers_id, babies_id)
       end
   else
+    puts "Please specify the caregiver's id number you wish to make changes to?"
+    caregivers_id = gets.chomp.to_i
+    
     puts "Please specify what you would like to update: a.) years of experience, b.) CPR certification or c.) First Aid certification. (Please type corresponding letter.)"
     user_selection = gets.chomp.downcase
 
-    puts "Please specify the caregiver's id number you wish to make changes to?"
-    caregivers_id = gets.chomp.to_i
       case user_selection
       when "a"
         puts "Please specify the updated years of experience for the caregiver (please enter a number)."
@@ -145,7 +147,7 @@ def update(db, baby, caregiver, join)
       end
   end
 end
-
+update(db, baby, caregiver, join)
 =begin
 =================DRIVER CODE for TESTING====================
 # TEST babies added to table
