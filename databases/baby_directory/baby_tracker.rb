@@ -26,7 +26,7 @@ baby.add_baby(db, "Nora", "Peterson", 10, "None")
 
 # POPULATE babies table
 15.times do
-  baby.add_baby(db, Faker::Name.first_name, Faker::Name.last_name, 0, "None")
+  baby.add_baby(db, Faker::Name.first_name, Faker::Name.last_name, rand(12), "None")
 end
 
 # POPULATE caregivers table
@@ -34,7 +34,14 @@ end
   caregiver.add_caregiver(db, Faker::Name.first_name, Faker::Name.last_name, rand(12), @cpr_cert, @first_aid_cert)
 end
 
+# POPULATE babies_caregivers table
+join.data_setup(db, "N/A", "N/A", 0, 0)
+
 METHOD TESTS
 baby.age_update(db, 9, 12)
+baby.special_needs(db, "Allergic to peanuts.", 3)
 caregiver.cpr_update(db, "true", 2)
+
 =end
+caregiver.experience_update(db, 2, 2)
+caregiver.first_aid_update(db, "true", 1)

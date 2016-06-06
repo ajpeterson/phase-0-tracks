@@ -58,7 +58,7 @@ class Caregivers
     db.execute("UPDATE caregivers SET cpr_cert=? WHERE id=?", [cpr_cert, id])
   end
 
-  def first_aid_update(db, cpr_cert, id)
+  def first_aid_update(db, first_aid_cert, id)
     db.execute("UPDATE caregivers SET first_aid_cert=? WHERE id=?", [first_aid_cert, id])
   end
 
