@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -8,9 +7,9 @@
   <body>
     <h1>Campus Directory</h1>
     <p>This directory lists each student along with the campus they will be attending.</p>
+      <p>Click <a href="/campus_update">here</a> to update a student's campus.</p>
     <ul>
-      <li><h3>Name:</h3>, <h3>Campus:</h3></li>
-      <% students.each do |student| %>
+      <% @students.each do |student| %>
         <li><%= student['name'] %>, <%= student['campus'] %></li>
       <% end %>
     </ul>

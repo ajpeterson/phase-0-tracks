@@ -24,4 +24,17 @@ post '/students' do
   redirect '/'
 end
 
-# add static resources
+# Create a route for campus_directory
+get '/campus_directory' do
+  @students = db.execute("SELECT * FROM students")
+  erb :campus_directory
+end
+
+get '/campus_update' do
+  erb :campus_update
+end
+
+post '/campus' do
+  db.execute("UPDATE students SET campus=? WHERE name=?", [params['campus'], params['name']])
+  redirect '/campus_directory'
+end
