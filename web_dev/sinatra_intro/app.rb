@@ -39,8 +39,22 @@ end
 
 # write a GET route that retrieves
 # a particular student
-
 get '/students/:id' do
   student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
   student.to_s
+end
+
+#====RELEASE 0: Add Routes====
+get '/contact' do
+  "1362 President St <br>
+  Glendale Heights, IL 60139"
+end
+
+get '/great_job' do
+  name = params[:name]
+  if name
+    "Good job, #{name}!"
+  else
+    "Good job!"
+  end
 end
