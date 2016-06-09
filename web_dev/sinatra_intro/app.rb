@@ -58,3 +58,15 @@ get '/great_job' do
     "Good job!"
   end
 end
+
+get '/:number1/calculate/:number2' do
+  number1 = params[:number1].to_i
+  number2 = params[:number2].to_i
+  calculation = number1 + number2
+  "#{number1} + #{number2} = #{calculation}"
+end
+
+get '/students_search' do
+  student = db.execute("SELECT * FROM students WHERE name=?", [params[:name]])
+  "Name: #{student['name']}
+end
