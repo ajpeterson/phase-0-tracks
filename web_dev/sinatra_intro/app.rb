@@ -66,7 +66,11 @@ get '/:number1/calculate/:number2' do
   "#{number1} + #{number2} = #{calculation}"
 end
 
-get '/students_search' do
-  student = db.execute("SELECT * FROM students WHERE name=?", [params[:name]])
-  "Name: #{student['name']}
+get '/students_search/:campus' do
+  students = db.execute("SELECT * FROM students WHERE campus=?", [params[:campus]])
+  response = ""
+  students.each do |student|
+    response << "Name: #{student['name']} Campus: #{student['campus']}<br><br>"
+  end
+  response
 end
