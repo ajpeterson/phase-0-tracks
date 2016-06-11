@@ -3,6 +3,9 @@ body {
   margin: 0 10px;
   padding: 0;
 }
+header {
+  background-color: white;
+}
 a:visited {
   color: #418e4f;
   text-decoration: none;
@@ -25,11 +28,10 @@ section p {
 }
 .border {
   font-family: Helvetica, sans-serif;
-  color: #ffffff;
+  color: #418e4f;
   padding: 25px;
   border: 1px solid #7c7c7c;
   text-align: center;
-  background-image: url("images/ireland-bg.jpg");
 }
 .green {
   color: #418e4f;
