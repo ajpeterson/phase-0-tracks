@@ -10,6 +10,13 @@ function button_click (event) {
 	event.target.style.border = "1px solid red";
 }
 
-var button = document.getElementsByTagName('button')
-button = button[0]
-button.addEventListener("click", button_click);
+//var button = document.getElementsByTagName('button')
+//button = button[0]
+//button.addEventListener("click", button_click);
+
+//Reworked making img hide on button click after learning about jquery in 9.3
+$(document).ready(function(){
+  $("#magic").click(function(){
+    $("#dbc_logo").hide();
+  });
+});
